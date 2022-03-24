@@ -1,5 +1,7 @@
 <?php
 
+include __DIR__.'/../log.php';
+
 class Curl{
   private $url;
   private $method = 'PUT';
@@ -61,6 +63,7 @@ class Curl{
       
     }catch(Exception $ex){
       echo "$ex";
+      writeOnLog($ex);
     }
     
   }

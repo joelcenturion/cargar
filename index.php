@@ -13,8 +13,6 @@ $inputFileName = __DIR__ . '/datos.xlsx';
 $spreadsheet = IOFactory::load($inputFileName);
 $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
 
-
-
 foreach($sheetData as $row => $column){
   $property = new PropertyModel();
   $tipoInmueble = new PropertyTypeModel();
@@ -27,20 +25,20 @@ foreach($sheetData as $row => $column){
     $isVenta = false;
     $isAlquiler = false;
     
-    if($data['precioAlquilerSm'] != ''){
+    if(!empty($data['precioAlquilerSm'])){
       $parse = parseMoney($data['precioAlquilerSm']);
       $precioAlquiler = $parse[0];
       $isAlquiler = true;
-    }elseif($data['precioAlquilerCm'] != ''){
+    }elseif(!empty($data['precioAlquilerCm'])){
       $parse = parseMoney($data['precioAlquilerCm']);
       $precioAlquiler = $parse[0];
       $isAlquiler = true;
     }
-    if($data['precioVentaSm'] != ''){
+    if(!empty($data['precioVentaSm'])){
       $parse = parseMoney($data['precioVentaSm']);
       $precioVenta = $parse[0];
       $isVenta = true;
-    }elseif($data['precioVentaCm'] != ''){
+    }elseif(!empty($data['precioVentaCm'])){
       $parse = parseMoney($data['precioVentaCm']);
       $precioVenta = $parse[0];
       $isVenta = true;
@@ -51,9 +49,11 @@ foreach($sheetData as $row => $column){
     $tipoInmueble->nombre = $data['tipoInmueble'];
     $tipoInmueble->alquiler = $isAlquiler;
     $tipoInmueble->venta = $isVenta;
+    $property->tipoInmueble = $tipoInmueble;
   }
 }
 
+var_dump($property);
 
 
 function saveProperty($data){
@@ -82,16 +82,16 @@ function parseMoney($str){
   $simbolo = substr($str, 0 ,strpos($str, ' '));
   $valor = substr($str, strpos($str, ' ')+1, strlen($str));
   $fmt = new NumberFormatter( 'es_PY', NumberFormatter::DECIMAL );
-  return array($valor, $simbolo);
+  return array($fmt->parse($valor), $simbolo);
 }
 
 function nameData($c){
   return array(
-    'fechaIngreso' => $c['A'],
-    'precioAlquilerSm' => $c['C'],
-    'precioAlquilerCm' => $c['D'],
-    'precioVentaSm' => $c['E'],
-    'precioVentaCm' => $c['F'],
-    'tipoInmueble' => $c['G']
+    'fechaIngreso' => trim($c['A']),
+    'precioAlquilerSm' => trim($c['C']),
+    'precioAlquilerCm' => trim($c['D']),
+    'precioVentaSm' => trim($c['E']),
+    'precioVentaCm' => trim($c['F']),
+    'tipoInmueble' => trim($c['G'])
   );
 }
