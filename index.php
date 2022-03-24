@@ -5,6 +5,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 include __DIR__.'/models/property_model.php';
 include __DIR__.'/network/curl.php';
 include __DIR__.'/models/estados_model.php';
+include __DIR__.'/models/property_type_model.php';
 
 date_default_timezone_set('America/Asuncion');
 
@@ -12,20 +13,44 @@ $inputFileName = __DIR__ . '/datos.xlsx';
 $spreadsheet = IOFactory::load($inputFileName);
 $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
 
-$property = new PropertyModel();
-// var_dump($sheetData);
+
 
 foreach($sheetData as $row => $column){
+  $property = new PropertyModel();
+  $tipoInmueble = new PropertyTypeModel();
+  
   if($row != 1){
-   $property->fechaIngreso = $column['A'];
-   $property->tipoInmueble = $column['B'];
-   if($column['C'] == ''){
-     
-   }
-  //  $property-> = $value[''];
-  //  $property-> = $value[''];
-  //  $property-> = $value[''];
-  //  $property-> = $value[''];
+    $data = nameData($column);
+    $property->fechaIngreso = $data['fechaIngreso'];
+    $precioAlquiler = null;
+    $precioVenta = null;
+    $isVenta = false;
+    $isAlquiler = false;
+    
+    if($data['precioAlquilerSm'] != ''){
+      $parse = parseMoney($data['precioAlquilerSm']);
+      $precioAlquiler = $parse[0];
+      $isAlquiler = true;
+    }elseif($data['precioAlquilerCm'] != ''){
+      $parse = parseMoney($data['precioAlquilerCm']);
+      $precioAlquiler = $parse[0];
+      $isAlquiler = true;
+    }
+    if($data['precioVentaSm'] != ''){
+      $parse = parseMoney($data['precioVentaSm']);
+      $precioVenta = $parse[0];
+      $isVenta = true;
+    }elseif($data['precioVentaCm'] != ''){
+      $parse = parseMoney($data['precioVentaCm']);
+      $precioVenta = $parse[0];
+      $isVenta = true;
+    }
+    
+    $property->precioAlquiler = $precioAlquiler;
+    $property->precioVenta = $precioVenta;
+    $tipoInmueble->nombre = $data['tipoInmueble'];
+    $tipoInmueble->alquiler = $isAlquiler;
+    $tipoInmueble->venta = $isVenta;
   }
 }
 
@@ -48,17 +73,25 @@ function displayEcho(){
 }
 
 function jsonPretty($data){
-  // $json = json_encode($data);
-  // $object = json_decode($json);
   $json = json_encode($data, JSON_PRETTY_PRINT);
   echo "<pre>$json</pre>";
 }
 
+function parseMoney($str){
+  $str = trim($str);
+  $simbolo = substr($str, 0 ,strpos($str, ' '));
+  $valor = substr($str, strpos($str, ' ')+1, strlen($str));
+  $fmt = new NumberFormatter( 'es_PY', NumberFormatter::DECIMAL );
+  return array($valor, $simbolo);
+}
 
-
-// $data = array(
-//   'id' => 1,
-//   'title' => 'foo',
-//   'body' => 'bar',
-//   'userId' => 1,
-// );
+function nameData($c){
+  return array(
+    'fechaIngreso' => $c['A'],
+    'precioAlquilerSm' => $c['C'],
+    'precioAlquilerCm' => $c['D'],
+    'precioVentaSm' => $c['E'],
+    'precioVentaCm' => $c['F'],
+    'tipoInmueble' => $c['G']
+  );
+}
