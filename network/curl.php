@@ -32,7 +32,7 @@ class Curl{
   public function send(){
     $headers = array(
       "Content-Type: application/json",
-      // "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJTQUkiLCJpYXQiOjE2MjI2MzU5MzQsInN1YiI6ImFkbWluIiwiaXNzIjoiMzUzMjcwMDY1MzEyNjAiLCJleHAiOjE2MjI2NTc1MzR9.TGGAVEWBWwuVD3NgRux3zb9jOn4Iq2Aa5fuP2OllIbk"
+      "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJTQUkiLCJpYXQiOjE2MjI2MzU5MzQsInN1YiI6ImFkbWluIiwiaXNzIjoiMzUzMjcwMDY1MzEyNjAiLCJleHAiOjE2MjI2NTc1MzR9.TGGAVEWBWwuVD3NgRux3zb9jOn4Iq2Aa5fuP2OllIbk"
     );
     try{
       
@@ -46,7 +46,7 @@ class Curl{
               CURLOPT_URL => $this->url,
               CURLOPT_RETURNTRANSFER => true,
               CURLOPT_CUSTOMREQUEST => 'PUT',
-              CURLOPT_POSTFIELDS => json_encode($this->data),
+              CURLOPT_POSTFIELDS => json_encode($this->data, JSON_PRESERVE_ZERO_FRACTION),
               CURLOPT_HTTPHEADER => $headers
           ] );
         break;
@@ -57,7 +57,7 @@ class Curl{
           ]);
         break;
       }
-      
+     
       $this->response = curl_exec($this->handler);
       return $this->response;
       
