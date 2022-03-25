@@ -1,14 +1,7 @@
 <?php
 
-class Estados{
-  public $idestadoinmueble;
+class Estado{
   public $estado;
   public $fechaHora;
-  public $comentario;
-  public $diasNotificacion;
-  public $duracionAlquiler;
-  public $idInmueble;
-  public $usuario;
-  
-  
+  public $comentario = '';
 }

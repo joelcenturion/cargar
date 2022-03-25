@@ -8,6 +8,7 @@ require_once __DIR__.'/network/curl.php';
 require_once __DIR__.'/models/estados_model.php';
 require_once __DIR__.'/models/property_type_model.php';
 require_once __DIR__.'/models/archivo_model.php';
+require_once __DIR__.'/models/estados_model.php';
 
 date_default_timezone_set('America/Asuncion');
 
@@ -20,7 +21,7 @@ $inmueble = new stdClass();
 
 foreach($sheetData as $row => $column){
     
-  if($row != 1 && $row != 2){
+  if($row != 1){
     $property = new PropertyModel();
     $tipoInmueble = new PropertyTypeModel();  
     $data = getData($column);
@@ -68,6 +69,10 @@ foreach($sheetData as $row => $column){
     $tipoInmueble->alquiler = $isAlquiler;
     $tipoInmueble->venta = $isVenta;
     $property->tipoInmueble = $tipoInmueble;
+    $estado = new Estado();
+    $estado->estado = strtoupper((!empty($data['estado']) ? $data['estado'] : 'DISPONIBLE'));
+    $estado->fechaHora = $fechaIngreso;
+    $property->estados = array($estado);
     
     $inmueble->inmueble = $property;
     saveProperty($inmueble, $imagesPath, $data['linkDrive'], $row);
@@ -141,6 +146,7 @@ function getData($c){
     'tipoInmueble' => trim($c['B']),
     'descripcion' => trim($c['G']),
     'linkDrive' => trim($c['I']),
+    'estado' => trim($c['J']),
   );
 }
 
