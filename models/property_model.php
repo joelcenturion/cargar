@@ -14,7 +14,7 @@ class PropertyModel {
   public $tipoInmueble;
   public $monedaVenta;
   public $monedaAlquiler;
-  
+    
   public $areasComunes = 0;
   public $cantPisos = 0;
   public $cantDpto=0;

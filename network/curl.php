@@ -1,7 +1,5 @@
 <?php
 
-include __DIR__.'/../log.php';
-
 class Curl{
   private $url;
   private $method = 'PUT';
@@ -46,7 +44,7 @@ class Curl{
               CURLOPT_URL => $this->url,
               CURLOPT_RETURNTRANSFER => true,
               CURLOPT_CUSTOMREQUEST => 'PUT',
-              CURLOPT_POSTFIELDS => json_encode($this->data, JSON_PRESERVE_ZERO_FRACTION),
+              CURLOPT_POSTFIELDS => json_encode($this->data, JSON_PRESERVE_ZERO_FRACTION | JSON_UNESCAPED_SLASHES),
               CURLOPT_HTTPHEADER => $headers
           ] );
         break;
@@ -62,8 +60,8 @@ class Curl{
       return $this->response;
       
     }catch(Exception $ex){
-      echo "$ex";
-      writeOnLog($ex);
+      $ex = ($this->url)."\n".($this->data)."\n".$ex;
+      throw $ex;
     }
     
   }

@@ -1,26 +1,29 @@
 <?php
-
+displayEcho();
 require_once __DIR__.'/spreadsheet/vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
-include __DIR__.'/models/property_model.php';
-include __DIR__.'/network/curl.php';
-include __DIR__.'/models/estados_model.php';
-include __DIR__.'/models/property_type_model.php';
+require_once __DIR__.'/log.php';
+require_once __DIR__.'/models/property_model.php';
+require_once __DIR__.'/network/curl.php';
+require_once __DIR__.'/models/estados_model.php';
+require_once __DIR__.'/models/property_type_model.php';
+require_once __DIR__.'/models/archivo_model.php';
 
 date_default_timezone_set('America/Asuncion');
 
-
 $inputFileName = __DIR__ . '/datos.xlsx';
+$imagesPath = __DIR__.'/images';
+
 $spreadsheet = IOFactory::load($inputFileName);
 $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
 $inmueble = new stdClass();
 
 foreach($sheetData as $row => $column){
-  $property = new PropertyModel();
-  $tipoInmueble = new PropertyTypeModel();
-  
-  if($row != 1){
-    $data = nameData($column);
+    
+  if($row != 1 && $row != 2){
+    $property = new PropertyModel();
+    $tipoInmueble = new PropertyTypeModel();  
+    $data = getData($column);
     $fechaIngreso = date('Y-m-d', strtotime($data['fechaIngreso']));
     $property->fechaIngreso = $fechaIngreso;
     $descripcion = $data['descripcion'];
@@ -67,10 +70,9 @@ foreach($sheetData as $row => $column){
     $property->tipoInmueble = $tipoInmueble;
     
     $inmueble->inmueble = $property;
-    saveProperty($inmueble);
+    saveProperty($inmueble, $imagesPath, $data['linkDrive'], $row);
     // jsonPretty($inmueble);
     // var_dump($inmueble);
-    // echo json_encode($inmueble);
   }
 }
 
@@ -78,15 +80,33 @@ foreach($sheetData as $row => $column){
 // jsonPretty($property);
 
 
-function saveProperty($data){
+function saveProperty($data, $imagesPath, $linkDrive, $row){
   $url = 'https://sai.propiver.com/SAI/seam/resource/rest/inmuebles/save';
   // $url = 'https://jsonplaceholder.typicode.com/posts/1';
   $curl = new Curl();
   $curl->url($url);
   $curl->method('put');
   $curl->data($data);
-  $response = $curl->send();
-  jsonPretty(json_decode($response));
+  try{
+    $response = $curl->send();
+    $response = json_decode($response);
+    jsonPretty($response);
+    if(isset($response->id)){
+      if(!empty($linkDrive)){
+        $archivos = assembleArchivos($linkDrive, $imagesPath, $response->id);
+        if (!($archivos ===false)){
+          saveAlbum($archivos, $response->id, $row);
+        }
+      }
+    }else{
+      $ex = "Failed: $row\nResponse: ".json_encode($response, JSON_PRETTY_PRINT);
+      writeOnLog($ex);
+    }
+  }catch(Exception $ex){
+    $ex = "Fila: $row \n$ex";
+    echo($ex);
+    writeOnLog($ex);
+  }
   $curl->close();
 }
 
@@ -111,14 +131,79 @@ function parseMoney($str){
   return array($fmt->parse($valor), $simbolo);
 }
 
-function nameData($c){
+function getData($c){
   return array(
     'fechaIngreso' => trim($c['A']),
     'precioAlquilerSm' => trim($c['C']),
     'precioAlquilerCm' => trim($c['D']),
     'precioVentaSm' => trim($c['E']),
     'precioVentaCm' => trim($c['F']),
-    'tipoInmueble' => trim($c['G']),
-    'descripcion' => trim($c['H'])
+    'tipoInmueble' => trim($c['B']),
+    'descripcion' => trim($c['G']),
+    'linkDrive' => trim($c['I']),
   );
+}
+
+function getLinkId($link){
+  if(!(strpos($link, 'folders/') === false)){
+    $needle = 'folders/';
+    $id = substr($link, stripos($link, $needle) + strlen($needle));
+    if(strpos($id,'?')!==false){
+      $id =  substr($id, 0, strpos($id, '?'));
+    }
+  }else{
+    $needle = 'file/d/';
+    $id = substr($link, stripos($link, $needle) + strlen($needle));
+    $id =  substr($id, 0, stripos($id, '/view'));
+  }
+  return $id;
+}
+
+function assembleArchivos($link, $imagesPath, $idInmueble){
+  $driveId = getLinkId($link);
+  $dir = "$imagesPath/$driveId";
+  if(is_dir($dir)){
+    $fileList = array_diff(scandir($dir), array('.', '..'));
+    $archivos = array();
+    foreach($fileList as $file){
+      $archivo = new Archivo();
+      $archivo->nombre = $file;
+      $archivo->mimeType = 'image/'.(substr($file, strpos($file, '.') + 1, strlen($file) - strpos($file, '.') - 1));
+      $archivo->pathArchivo = '/SAI/Documentos/'.$idInmueble;
+      $data = file_get_contents("$dir/$file");
+      $base64 = base64_encode($data);
+      $archivo->data = $base64;
+      array_push($archivos, $archivo);
+    }
+    return $archivos;
+  }else{
+    return false;
+  }
+}
+
+function saveAlbum($archivos, $idInmueble, $row){
+  $url = 'https://sai.propiver.com/SAI/seam/resource/rest/album/save';
+  $curl = new Curl();
+  $curl->url($url);
+  $curl->method('put');
+  $album = new stdClass();
+  $album->idInmueble = $idInmueble;
+  foreach($archivos as $archivo){
+    $album->archivos = array($archivo);    
+    $curl->data($album);
+    try{
+      $response = $curl->send();
+      $response = json_decode($response);
+      jsonPretty($response);
+      if(!(isset($response->status) && (strcasecmp($response->status, 'archivos creados.') == 0))){
+        $ex = "Failed: $row\nResponse: ".json_encode($response, JSON_PRETTY_PRINT);
+        writeOnLog($ex);
+      }
+    }catch(Exception $ex){
+      $ex = "Fila: $row \n$ex";
+      echo $ex;
+      writeOnLog($ex);
+    }
+  }
+  $curl->close();
 }
