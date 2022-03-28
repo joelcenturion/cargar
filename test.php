@@ -6,17 +6,18 @@ include __DIR__.'/network/curl.php';
 require __DIR__.'/log.php';
 
 // displayEcho();
-// $link1 = 'https://drive.google.com/drive/folders/1v7MA25xW1gwBp8rHIVLuGRCnFTnmH5aV?usp=sharing';
+$link1 = 'https://drive.google.com/drive/folders/1v7MA25xW1gwBp8rHIVLuGRCnFTnmH5aV?usp=sharing';
 // $link2 = 'https://drive.google.com/file/d/1qck88s3EJRkjl6W-7ezMe_pC-VyLj0iy/view?usp=sharing'; 
 
-// $idInmueble = 623;
-// $archivos = assembleArchivos($link1, $imagesPath, $idInmueble);
+$idInmueble = 623;
+$archivos = assembleArchivos($link1, $imagesPath, $idInmueble);
+var_dump($archivos);
 // saveAlbum($archivos, $idInmueble);
 // $id = null;
-$object = new stdClass();
-$object->prop = 'Property';
+// $object = new stdClass();
+// $object->prop = 'Property';
 
-writeOnLog(json_encode($object, JSON_PRETTY_PRINT));
+// writeOnLog(json_encode($object, JSON_PRETTY_PRINT));
 
 function assembleArchivos($link, $imagesPath, $idInmueble){
   $driveId = getLinkId($link);
@@ -34,7 +35,7 @@ function assembleArchivos($link, $imagesPath, $idInmueble){
       $archivo->data = $base64;
       array_push($archivos, $archivo);
     }
-    return $archivos;
+    return empty($archivos) ? false: $archivos;
   }else{
     return null;
   }

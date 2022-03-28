@@ -181,7 +181,7 @@ function assembleArchivos($link, $imagesPath, $idInmueble){
       $archivo->data = $base64;
       array_push($archivos, $archivo);
     }
-    return $archivos;
+    return empty($archivos) ? false: $archivos;
   }else{
     return false;
   }
