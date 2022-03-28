@@ -10,11 +10,16 @@ class PropertyModel {
   public $descripcion;
   public $precioAlquiler;
   public $precioVenta;
-  public $comisionVenta;
+  public $comisionVenta=false;
+  public $porcentajeComisionVenta=0.0;
   public $tipoInmueble;
   public $monedaVenta;
   public $monedaAlquiler;
+  public $publicado;
+  public $nombreEdificio;
   public $estados;
+  public $zona;
+  public $iva;
     
   public $areasComunes = 0;
   public $cantPisos = 0;
@@ -24,6 +29,5 @@ class PropertyModel {
   public $dormitoriosSuite=0;
   public $dormitoriosNormales=0;
   public $dormitoriosPlantaBaja = 0;
-
   
 }

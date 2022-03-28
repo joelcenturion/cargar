@@ -14,25 +14,30 @@ date_default_timezone_set('America/Asuncion');
 
 $inputFileName = __DIR__ . '/datos.xlsx';
 $imagesPath = __DIR__.'/images';
+$csvPath = __DIR__.'/ubicaciones.csv';
 
 $spreadsheet = IOFactory::load($inputFileName);
 $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
 $inmueble = new stdClass();
 
+$listMaps = getFromCsv($csvPath);
+echo count($sheetData);
 foreach($sheetData as $row => $column){
     
   if($row != 1){
     $property = new PropertyModel();
-    $tipoInmueble = new PropertyTypeModel();  
+    $tipoInmueble = new PropertyTypeModel();
+    
     $data = getData($column);
-    $fechaIngreso = date('Y-m-d', strtotime($data['fechaIngreso']));
-    $property->fechaIngreso = $fechaIngreso;
-    $descripcion = $data['descripcion'];
-    $length = (strlen($descripcion) < 200) ? strlen($descripcion) : 200;
-    $property->titulo = substr($descripcion, 0, $length);
-    $property->descripcion = $descripcion;
-    $precioAlquiler = 0;
-    $precioVenta = 0;
+    $property->publicado = true;
+    $property->nombreEdificio = $data['nombreEdificio'];
+    if(!empty($data['zona'])){
+      $property->zona = $data['zona'];
+    }
+    $property->direccion = $data['direccion'];
+    
+    $precioAlquiler = 0.0;
+    $precioVenta = 0.0;
     $isVenta = false;
     $isAlquiler = false;
     $monedaVenta = '$';
@@ -61,18 +66,57 @@ foreach($sheetData as $row => $column){
       $monedaVenta = $parse[1];
     }
     
-    $property->precioAlquiler = (float) $precioAlquiler;
-    $property->precioVenta = (float) $precioVenta;
-    $property->monedaAlquiler = $monedaAlquiler;
-    $property->monedaVenta = $monedaVenta;
+    $zona = $data['zona'];
+    
+    if(!empty($data['fotos'])){
+      $location = getLocation($data['ubicacion'], $listMaps);
+      if($location !== false){
+        $property->latitud = $location[0];
+        $property->longitud = $location[1];
+      }
+    }
+    
     $tipoInmueble->nombre = strtoupper($data['tipoInmueble']);
     $tipoInmueble->alquiler = $isAlquiler;
     $tipoInmueble->venta = $isVenta;
     $property->tipoInmueble = $tipoInmueble;
+    
+    if(empty($data['descripcion'])){
+      $operacion = ($isVenta && $isAlquiler)?'Venta/Alquiler':($isVenta? 'Venta':'Alquiler');
+      $descripcion = $data['tipoInmueble'].' en '.$operacion.' - '.$zona;
+    }else{
+      $descripcion = $data['descripcion'];
+    } 
+    
+    $length = (strlen($descripcion) < 200) ? strlen($descripcion) : 200;
+    $property->titulo = substr($descripcion, 0, $length);
+    $property->descripcion = $descripcion;
+    
+    $property->precioAlquiler = (float) $precioAlquiler;
+    $property->precioVenta = (float) $precioVenta;
+    $property->monedaAlquiler = $monedaAlquiler;
+    $property->monedaVenta = $monedaVenta;
+    
+    if(!empty($data['iva']) && strtolower($data['iva']) == 'incluido'){
+      $property->iva = true;
+    }
+    
+    if(!empty($data['comisionVenta'])){
+      $porcentajeComisionVenta = parseComision($data['comisionVenta']);
+      if($porcentajeComisionVenta !== false){
+        $property->porcentajeComisionVenta = $porcentajeComisionVenta;
+        $property->comisionVenta = true;
+      } 
+    }
+    
+    $fechaIngreso = date('Y-m-d', strtotime($data['fechaIngreso']));
+    $property->fechaIngreso = $fechaIngreso;
+    
     $estado = new Estado();
-    $estado->estado = strtoupper((!empty($data['estado']) ? $data['estado'] : 'DISPONIBLE'));
-    $estado->fechaHora = $fechaIngreso;
+    $estado->estado = strtoupper((!empty($data['disponibilidad']) ? $data['disponibilidad'] : 'DISPONIBLE'));
+    // $estado->fechaHora = $fechaIngreso;
     $property->estados = array($estado);
+    
     
     $inmueble->inmueble = $property;
     // saveProperty($inmueble, $imagesPath, $data['linkDrive'], $row);
@@ -83,7 +127,6 @@ foreach($sheetData as $row => $column){
 
 // var_dump($property);
 // jsonPretty($property);
-
 
 function saveProperty($data, $imagesPath, $linkDrive, $row){
   $url = 'https://sai.propiver.com/SAI/seam/resource/rest/inmuebles/save';
@@ -138,15 +181,39 @@ function parseMoney($str){
 
 function getData($c){
   return array(
-    'fechaIngreso' => trim($c['A']),
-    'precioAlquilerSm' => trim($c['C']),
-    'precioAlquilerCm' => trim($c['D']),
-    'precioVentaSm' => trim($c['E']),
-    'precioVentaCm' => trim($c['F']),
-    'tipoInmueble' => trim($c['B']),
-    'descripcion' => trim($c['G']),
-    'linkDrive' => trim($c['I']),
-    'estado' => trim($c['J']),
+    'tipoInmueble' => trim($c['A']) == '-'? '' : trim($c['A']),
+    'publicado' => trim($c['B']) == '-'? '' : trim($c['B']),
+    'nombreEdificio' => trim($c['C']) == '-'? '' : trim($c['C']),
+    'disponibilidad' => trim($c['D']) == '-'? '' : trim($c['D']),
+    'ciudad' => trim($c['E']) == '-'? '' : trim($c['E']),
+    'zona' => trim($c['F']) == '-'? '' : trim($c['F']),
+    'direccion' => trim($c['G']) == '-'? '' : trim($c['G']),
+    'ubicacion' => trim($c['H']) == '-'? '' : trim($c['H']),
+    'fotos' => trim($c['I']) == '-'? '' : trim($c['I']),
+    'descripcion' => trim($c['J']) == '-'? '' : trim($c['J']),
+    'precioAlquilerSm' => trim($c['K']) == '-'? '' : trim($c['K']),
+    'precioAlquilerCm' => trim($c['L']) == '-'? '' : trim($c['L']),
+    'precioVentaSm' => trim($c['M']) == '-'? '' : trim($c['M']),
+    'precioVentaCm' => trim($c['N']) == '-'? '' : trim($c['N']),
+    'iva' => trim($c['O']) == '-'? '' : trim($c['O']),
+    'comisionVenta' => trim($c['P']) == '-'? '' : trim($c['P']),
+    'propietario' => trim($c['Q']) == '-'? '' : trim($c['Q']),
+    'telef' => trim($c['R']) == '-'? '' : trim($c['R']),
+    'dormSuite' => trim($c['S']) == '-'? '' : trim($c['S']),
+    'dormNormal' => trim($c['T']) == '-'? '' : trim($c['T']),
+    'estado' => trim($c['U']) == '-'? '' : trim($c['U']),
+    'amoblado' => trim($c['V']) == '-'? '' : trim($c['V']),
+    'baulera' => trim($c['W']) == '-'? '' : trim($c['W']),
+    'ascensor' => trim($c['X']) == '-'? '' : trim($c['X']),
+    'piscina' => trim($c['Y']) == '-'? '' : trim($c['Y']),
+    'parrilla' => trim($c['Z']) == '-'? '' : trim($c['Z']),
+    'gimnasio' => trim($c['AA']) == '-'? '' : trim($c['AA']),
+    'petFriendly' => trim($c['AB']) == '-'? '' : trim($c['AB']),
+    'cartel' => trim($c['AC']) == '-'? '' : trim($c['AC']),
+    'fechaIngreso' => trim($c['AD']) == '-'? '' : trim($c['AD']),
+    'cantDpto' => trim($c['AE']) == '-'? '' : trim($c['AE']),
+    'obs' => trim($c['AF']) == '-'? '' : trim($c['AF']),
+    
   );
 }
 
@@ -212,4 +279,31 @@ function saveAlbum($archivos, $idInmueble, $row){
     }
   }
   $curl->close();
+}
+
+function getLocation($link, $list){ 
+  $result = preg_grep( '~^'.$link.'~', $list);
+  
+  if(!empty($result)){
+    $location = explode(';', reset($result));
+    $location = explode(',', $location[1]);
+    $location[0] = floatval($location[0]);
+    $location[1] = floatval($location[1]);
+    return($location);
+  }else{
+    return false;
+  }
+}
+
+function getFromCsv($csvPath){
+  $csv = fopen($csvPath, "r");
+  $links = fgetcsv($csv, 0, '*');
+  fclose($csv);
+  return $links;
+}
+
+function parseComision($str){
+  $fmt = new NumberFormatter( 'es_PY', NumberFormatter::DECIMAL );
+  $valor = $fmt->parse($str);
+  return $valor;
 }
