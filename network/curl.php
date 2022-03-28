@@ -44,7 +44,7 @@ class Curl{
               CURLOPT_URL => $this->url,
               CURLOPT_RETURNTRANSFER => true,
               CURLOPT_CUSTOMREQUEST => 'PUT',
-              CURLOPT_POSTFIELDS => json_encode($this->data, JSON_PRESERVE_ZERO_FRACTION | JSON_UNESCAPED_SLASHES),
+              CURLOPT_POSTFIELDS => json_encode($this->data, JSON_PRESERVE_ZERO_FRACTION | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
               CURLOPT_HTTPHEADER => $headers
           ] );
         break;

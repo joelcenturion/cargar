@@ -75,8 +75,8 @@ foreach($sheetData as $row => $column){
     $property->estados = array($estado);
     
     $inmueble->inmueble = $property;
-    saveProperty($inmueble, $imagesPath, $data['linkDrive'], $row);
-    // jsonPretty($inmueble);
+    // saveProperty($inmueble, $imagesPath, $data['linkDrive'], $row);
+    jsonPretty($inmueble);
     // var_dump($inmueble);
   }
 }
@@ -121,7 +121,7 @@ function displayEcho(){
 }
 
 function jsonPretty($data){
-  $json = json_encode($data, JSON_PRETTY_PRINT | JSON_PRESERVE_ZERO_FRACTION);
+  $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_PRESERVE_ZERO_FRACTION | JSON_UNESCAPED_UNICODE);
   echo "<pre>$json</pre>";
 }
 
