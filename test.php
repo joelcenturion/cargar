@@ -5,7 +5,7 @@ $imagesPath = __DIR__.'/images';
 include __DIR__.'/network/curl.php';
 require __DIR__.'/log.php';
 $csvPath = __DIR__.'/ubicaciones-test.csv';
-
+date_default_timezone_set('America/Asuncion');
 // displayEcho();
 // $link1 = 'https://drive.google.com/drive/folders/1v7MA25xW1gwBp8rHIVLuGRCnFTnmH5aV?usp=sharing';
 // $link2 = 'https://drive.google.com/file/d/1qck88s3EJRkjl6W-7ezMe_pC-VyLj0iy/view?usp=sharing'; 
@@ -26,10 +26,17 @@ $link3 = 'https://goo.gl/maps/tgUuQCXvqjwctkzMA';
 
 
 // getLocation($link3, $list);
+$data=array();
+$data['fechaIngreso']= '06.11.2021';
+if(strpos($data['fechaIngreso'], '/')){
+  $data['fechaIngreso'] = str_replace('/','-',$data['fechaIngreso']);
+  $fechaIngreso = date('Y-m-d', strtotime($data['fechaIngreso']));
+}else{
+  $fechaIngreso = date('Y-m-d', time());
+}
+echo $fechaIngreso."\n";
 
 // var_dump($list);
-$m = "5.5%";
-echo parseComision($m);
 
 function assembleArchivos($link, $imagesPath, $idInmueble){
   $driveId = getLinkId($link);

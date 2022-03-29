@@ -13,7 +13,7 @@ date_default_timezone_set('America/Asuncion');
 set_error_handler('errorHandler');
 set_exception_handler('exceptionHandler');
 
-$inputFileName = __DIR__ . '/datos1.xlsx';
+$inputFileName = __DIR__ . '/datos.xlsx';
 $imagesPath = __DIR__.'/images';
 $csvPath = __DIR__.'/ubicaciones.csv';
 
@@ -135,14 +135,20 @@ foreach($sheetData as $row => $column){
       $property->baulera = strcasecmp($data['baulera'], 'no') == 0 ? false: true;
     }
     
-    $property->ascensor = strcasecmp($data['ascensor'], 'no') == 0 ? false: true;
-    $property->piscina = strcasecmp($data['piscina'], 'no') == 0 ? false: true;
-    $property->parrilla = strcasecmp($data['parrilla'], 'no') == 0 ? false: true;
-    $property->gimnasio = strcasecmp($data['gimnasio'], 'no') == 0 ? false: true;
-    $property->petFriendly = strcasecmp($data['petFriendly'], 'no') == 0 ? false: true;
-    $property->cartel = strcasecmp($data['cartel'], 'no') == 0 ? false: true;
+    $property->ascensor = (strcasecmp($data['ascensor'], 'no') == 0 || empty($data['ascensor'])) ? false: true;
+    $property->piscina = (strcasecmp($data['piscina'], 'no') == 0 || empty($data['piscina'])) ? false: true;
+    $property->parrilla = (strcasecmp($data['parrilla'], 'no') == 0 || empty($data['parrilla'])) ? false: true;
+    $property->gimnasio = (strcasecmp($data['gimnasio'], 'no') == 0  || empty($data['gimnasio'])) ? false: true;
+    $property->petFriendly = (strcasecmp($data['petFriendly'], 'no') == 0  || empty($data['petFriendly'])) ? false: true;
+    $property->cartel = (strcasecmp($data['cartel'], 'no')) == 0  || empty($data['cartel']) ? false: true;
     
-    $fechaIngreso = empty($data['fechaIngreso'])?date('Y-m-d'):date('Y-m-d', strtotime($data['fechaIngreso']));
+    if(!empty($data['fechaIngreso'])){
+      $data['fechaIngreso'] = str_replace('/','-',$data['fechaIngreso']);
+      $fechaIngreso = date('Y-m-d', strtotime($data['fechaIngreso']));
+    }else{
+      $fechaIngreso = date('Y-m-d', time());
+    }
+    
     $property->fechaIngreso = $fechaIngreso;
     
     $property->cantDpto = empty($data['cantDpto'])?0:intval($data['cantDpto']);
@@ -154,8 +160,8 @@ foreach($sheetData as $row => $column){
     $property->estados = array($estado);
     
     $inmueble->inmueble = $property;
-    saveProperty($inmueble, $imagesPath, $data['fotos']);
-    // jsonPretty($inmueble);
+    // saveProperty($inmueble, $imagesPath, $data['fotos']);
+    jsonPretty($inmueble);
     // var_dump($inmueble);
   }
   $remaining--;
