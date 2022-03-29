@@ -24,7 +24,6 @@ $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
 $sheet = $spreadsheet->getActiveSheet();
 $writer = IOFactory::createWriter($spreadsheet, "Xlsx");
 
-
 $inmueble = new stdClass();
 
 $listMaps = getFromCsv($csvPath);
@@ -32,7 +31,8 @@ $remaining = count($sheetData);
 echo("\nremaining: $remaining\n");;
 
 foreach($sheetData as $row => $column){
-  if($row != 1){
+  if($row > 511){
+    echo "row: $row\n";
     $property = new PropertyModel();
     $tipoInmueble = new PropertyTypeModel();
     
@@ -140,6 +140,7 @@ foreach($sheetData as $row => $column){
     $property->parrilla = (strcasecmp($data['parrilla'], 'no') == 0 || empty($data['parrilla'])) ? false: true;
     $property->gimnasio = (strcasecmp($data['gimnasio'], 'no') == 0  || empty($data['gimnasio'])) ? false: true;
     $property->petFriendly = (strcasecmp($data['petFriendly'], 'no') == 0  || empty($data['petFriendly'])) ? false: true;
+    $property->baulera = (strcasecmp($data['baulera'], 'no') == 0  || empty($data['baulera'])) ? false: true;
     $property->cartel = (strcasecmp($data['cartel'], 'no')) == 0  || empty($data['cartel']) ? false: true;
     
     if(!empty($data['fechaIngreso'])){
@@ -160,8 +161,8 @@ foreach($sheetData as $row => $column){
     $property->estados = array($estado);
     
     $inmueble->inmueble = $property;
-    // saveProperty($inmueble, $imagesPath, $data['fotos']);
-    jsonPretty($inmueble);
+    saveProperty($inmueble, $imagesPath, $data['fotos']);
+    // jsonPretty($inmueble);
     // var_dump($inmueble);
   }
   $remaining--;
@@ -183,9 +184,9 @@ function saveProperty($data, $imagesPath, $linkDrive){
     $response = json_decode($response);
     echo json_encode($response);
     if(isset($response->id)){
+      writeOnExcel('AG', $row, 'ok');
       if(!empty($linkDrive)){
         $archivos = assembleArchivos($linkDrive, $imagesPath, $response->id);
-        writeOnExcel('AG', $row, 'ok');
         if (!($archivos ===false)){
           saveAlbum($archivos, $response->id);
         }else{
@@ -318,11 +319,10 @@ function saveAlbum($archivos, $idInmueble){
     try{
       $response = $curl->send();
       $response = json_decode($response);
-      echo " json_encode($response)";
+      echo  ' '.json_encode($response);
       if(!(isset($response->status) && (strcasecmp($response->status, 'archivos creados.') == 0))){
         $ex = "Failed: $row\nResponse: ".json_encode($response, JSON_PRETTY_PRINT);
         writeOnLog($ex);
-      }else{
         $failed++;
       }
     }catch(Exception $ex){
@@ -375,10 +375,18 @@ function existeCondicion($str){
 }
 
 function writeOnExcel($c, $r, $msg){
-  global $sheet, $writer, $inputFileName;
-  $c = strtoupper($c);
-  $sheet->setCellValue("$c$r", $msg);
-  $writer->save($inputFileName);
+  global $row;
+  try{
+    global $sheet, $writer, $inputFileName;
+    $c = strtoupper($c);
+    $sheet->setCellValue("$c$r", $msg);
+    $writer->save($inputFileName);  
+  }catch(Exception $ex){
+    $ex = "Fila: $row \n$ex";
+    echo($ex);
+    writeOnLog($ex);
+  }
+  
 }
 
 function errorHandler($errno, $errstr, $errfile, $errline){

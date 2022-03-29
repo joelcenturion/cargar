@@ -1,75 +1,40 @@
 
 *************
-Custom error:
- [8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php<br>
+Failed: 43
+Response: {
+    "id": null
+}
 *************
 
 *************
-Custom error:
- [8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php<br>
+Failed: 117
+Response: {
+    "id": null
+}
 *************
 
 *************
-Custom error:
-[8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php
-Row: 2
+Failed: 141
+Response: {
+    "id": null
+}
 *************
 
 *************
-Custom error:
-[8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php
-Row: 3
+Failed: 313
+Response: null
 *************
 
 *************
-Custom error:
-[8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php
-Row: 2
+Failed: 401
+Response: {
+    "id": null
+}
 *************
 
 *************
-Custom error:
-[8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php
-Row: 3
-*************
-
-*************
-Custom error:
-[8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php
-Row: 2
-*************
-
-*************
-Custom error:
-[8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php
-Row: 2
-*************
-
-*************
-Custom error:
-[8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php
-Row: 3
-*************
-
-*************
-Custom error:
-[8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php
-Row: 2
-*************
-
-*************
-Custom error:
-[8] Undefined index: foto
-Error on line 157 in C:\xampp\htdocs\cargar\index.php
-Row: 3
+Failed: 537
+Response: {
+    "id": null
+}
 *************

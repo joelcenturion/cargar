@@ -27,8 +27,8 @@ $link3 = 'https://goo.gl/maps/tgUuQCXvqjwctkzMA';
 
 // getLocation($link3, $list);
 $data=array();
-$data['fechaIngreso']= '06.11.2021';
-if(strpos($data['fechaIngreso'], '/')){
+$data['fechaIngreso']= '2011';
+if(!empty($data['fechaIngreso'])){
   $data['fechaIngreso'] = str_replace('/','-',$data['fechaIngreso']);
   $fechaIngreso = date('Y-m-d', strtotime($data['fechaIngreso']));
 }else{
