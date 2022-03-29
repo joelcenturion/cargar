@@ -22,8 +22,15 @@ class PropertyModel {
   public $iva;
   public $propietario;
   public $telefPropietario;
-
-    
+  public $condicionInmueble;
+  public $muebles = false;
+  public $baulera = false;
+  public $ascensor = false;
+  public $piscina = false;
+  public $parrilla = false;
+  public $petFriendly = false;
+  public $cartel = false;
+  public $descrInmueble;    
   public $areasComunes = 0;
   public $cantPisos = 0;
   public $cantDpto=0;

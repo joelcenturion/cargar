@@ -1,5 +1,5 @@
 <?php
-displayEcho();
+// displayEcho();
 require_once __DIR__.'/spreadsheet/vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
 require_once __DIR__.'/log.php';
@@ -8,22 +8,30 @@ require_once __DIR__.'/network/curl.php';
 require_once __DIR__.'/models/estados_model.php';
 require_once __DIR__.'/models/property_type_model.php';
 require_once __DIR__.'/models/archivo_model.php';
-require_once __DIR__.'/models/estados_model.php';
 
 date_default_timezone_set('America/Asuncion');
+set_error_handler('errorHandler');
+set_exception_handler('exceptionHandler');
 
-$inputFileName = __DIR__ . '/datos.xlsx';
+$inputFileName = __DIR__ . '/datos1.xlsx';
 $imagesPath = __DIR__.'/images';
 $csvPath = __DIR__.'/ubicaciones.csv';
 
 $spreadsheet = IOFactory::load($inputFileName);
 $sheetData = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
+
+//write
+$sheet = $spreadsheet->getActiveSheet();
+$writer = IOFactory::createWriter($spreadsheet, "Xlsx");
+
+
 $inmueble = new stdClass();
 
 $listMaps = getFromCsv($csvPath);
-echo count($sheetData);
+$remaining = count($sheetData);
+echo("\nremaining: $remaining\n");;
+
 foreach($sheetData as $row => $column){
-    
   if($row != 1){
     $property = new PropertyModel();
     $tipoInmueble = new PropertyTypeModel();
@@ -115,27 +123,49 @@ foreach($sheetData as $row => $column){
     
     $property->dormitoriosSuite = empty($data['dormitoriosSuite']) ? 0 : intval($data['dormitoriosSuite']);
     $property->dormitoriosNormales = empty($data['dormitoriosNormales']) ? 0 : intval($data['dormitoriosNormales']);
+    if(existeCondicion($data['condicionInmueble'])){
+      $property->condicionInmueble = $data['condicionInmueble'];
+    }
+    
+    if(!empty($data['muebles'])){
+      $property->muebles = strcasecmp($data['muebles'], 'no') == 0 ? false: true;
+    }
+    
+    if(!empty($data['baulera'])){
+      $property->baulera = strcasecmp($data['baulera'], 'no') == 0 ? false: true;
+    }
+    
+    $property->ascensor = strcasecmp($data['ascensor'], 'no') == 0 ? false: true;
+    $property->piscina = strcasecmp($data['piscina'], 'no') == 0 ? false: true;
+    $property->parrilla = strcasecmp($data['parrilla'], 'no') == 0 ? false: true;
+    $property->gimnasio = strcasecmp($data['gimnasio'], 'no') == 0 ? false: true;
+    $property->petFriendly = strcasecmp($data['petFriendly'], 'no') == 0 ? false: true;
+    $property->cartel = strcasecmp($data['cartel'], 'no') == 0 ? false: true;
     
     $fechaIngreso = empty($data['fechaIngreso'])?date('Y-m-d'):date('Y-m-d', strtotime($data['fechaIngreso']));
     $property->fechaIngreso = $fechaIngreso;
     
+    $property->cantDpto = empty($data['cantDpto'])?0:intval($data['cantDpto']);
+    $property->descrInmueble = $data['descrInmueble'];
+    
     $estado = new Estado();
-    $estado->estado = strtoupper((!empty($data['disponibilidad']) ? $data['disponibilidad'] : 'DISPONIBLE'));
-    // $estado->fechaHora = $fechaIngreso;
+    $estado->estado = 'DISPONIBLE';
+    $estado->fechaHora = $fechaIngreso;
     $property->estados = array($estado);
     
-    
     $inmueble->inmueble = $property;
-    // saveProperty($inmueble, $imagesPath, $data['linkDrive'], $row);
-    jsonPretty($inmueble);
+    saveProperty($inmueble, $imagesPath, $data['fotos']);
+    // jsonPretty($inmueble);
     // var_dump($inmueble);
   }
+  $remaining--;
+  echo("\n\nremaining: $remaining\n");
 }
 
 // var_dump($property);
-// jsonPretty($property);
 
-function saveProperty($data, $imagesPath, $linkDrive, $row){
+function saveProperty($data, $imagesPath, $linkDrive){
+  global $row;
   $url = 'https://sai.propiver.com/SAI/seam/resource/rest/inmuebles/save';
   // $url = 'https://jsonplaceholder.typicode.com/posts/1';
   $curl = new Curl();
@@ -145,15 +175,19 @@ function saveProperty($data, $imagesPath, $linkDrive, $row){
   try{
     $response = $curl->send();
     $response = json_decode($response);
-    jsonPretty($response);
+    echo json_encode($response);
     if(isset($response->id)){
       if(!empty($linkDrive)){
         $archivos = assembleArchivos($linkDrive, $imagesPath, $response->id);
+        writeOnExcel('AG', $row, 'ok');
         if (!($archivos ===false)){
-          saveAlbum($archivos, $response->id, $row);
+          saveAlbum($archivos, $response->id);
+        }else{
+          writeOnExcel('AH', $row, 'sin fotos');
         }
       }
     }else{
+      writeOnExcel('AG', $row, 'failed');
       $ex = "Failed: $row\nResponse: ".json_encode($response, JSON_PRETTY_PRINT);
       writeOnLog($ex);
     }
@@ -161,6 +195,7 @@ function saveProperty($data, $imagesPath, $linkDrive, $row){
     $ex = "Fila: $row \n$ex";
     echo($ex);
     writeOnLog($ex);
+    writeOnExcel('AG', $row, 'failed');
   }
   $curl->close();
 }
@@ -172,7 +207,8 @@ function displayEcho(){
 
 function jsonPretty($data){
   $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_PRESERVE_ZERO_FRACTION | JSON_UNESCAPED_UNICODE);
-  echo "<pre>$json</pre>";
+  // echo "<pre>$json</pre>";
+  echo "$json";
 }
 
 function parseMoney($str){
@@ -208,8 +244,8 @@ function getData($c){
     'telefPropietario' => trim($c['R']) == '-'? '' : trim($c['R']),
     'dormitoriosSuite' => trim($c['S']) == '-'? '' : trim($c['S']),
     'dormitoriosNormales' => trim($c['T']) == '-'? '' : trim($c['T']),
-    'estado' => trim($c['U']) == '-'? '' : trim($c['U']),
-    'amoblado' => trim($c['V']) == '-'? '' : trim($c['V']),
+    'condicionInmueble' => trim($c['U']) == '-'? '' : trim($c['U']),
+    'muebles' => trim($c['V']) == '-'? '' : trim($c['V']),
     'baulera' => trim($c['W']) == '-'? '' : trim($c['W']),
     'ascensor' => trim($c['X']) == '-'? '' : trim($c['X']),
     'piscina' => trim($c['Y']) == '-'? '' : trim($c['Y']),
@@ -219,7 +255,7 @@ function getData($c){
     'cartel' => trim($c['AC']) == '-'? '' : trim($c['AC']),
     'fechaIngreso' => trim($c['AD']) == '-'? '' : trim($c['AD']),
     'cantDpto' => trim($c['AE']) == '-'? '' : trim($c['AE']),
-    'obs' => trim($c['AF']) == '-'? '' : trim($c['AF']),
+    'descrInmueble' => trim($c['AF']) == '-'? '' : trim($c['AF']),
     
   );
 }
@@ -261,30 +297,36 @@ function assembleArchivos($link, $imagesPath, $idInmueble){
   }
 }
 
-function saveAlbum($archivos, $idInmueble, $row){
+function saveAlbum($archivos, $idInmueble){
+  global $row;
   $url = 'https://sai.propiver.com/SAI/seam/resource/rest/album/save';
   $curl = new Curl();
   $curl->url($url);
   $curl->method('put');
   $album = new stdClass();
   $album->idInmueble = $idInmueble;
+  $failed = 0;
   foreach($archivos as $archivo){
     $album->archivos = array($archivo);    
     $curl->data($album);
     try{
       $response = $curl->send();
       $response = json_decode($response);
-      jsonPretty($response);
+      echo " json_encode($response)";
       if(!(isset($response->status) && (strcasecmp($response->status, 'archivos creados.') == 0))){
         $ex = "Failed: $row\nResponse: ".json_encode($response, JSON_PRETTY_PRINT);
         writeOnLog($ex);
+      }else{
+        $failed++;
       }
     }catch(Exception $ex){
       $ex = "Fila: $row \n$ex";
       echo $ex;
       writeOnLog($ex);
+      $failed++;
     }
   }
+  writeOnExcel('AH', $row, "ok. failed: $failed");
   $curl->close();
 }
 
@@ -314,4 +356,34 @@ function parseComision($str){
   $str = number_format(floatval($str), 2, ',','.');
   $valor = $fmt->parse($str);
   return $valor;
+}
+
+function existeCondicion($str){
+  $str = strtolower($str);
+  $condiciones = array('malo','regular','bueno','muy bueno', 'excelente', 'a estrenar', 'en pozo');
+  if(in_array($str, $condiciones)){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+function writeOnExcel($c, $r, $msg){
+  global $sheet, $writer, $inputFileName;
+  $c = strtoupper($c);
+  $sheet->setCellValue("$c$r", $msg);
+  $writer->save($inputFileName);
+}
+
+function errorHandler($errno, $errstr, $errfile, $errline){
+  global $row;
+  echo "error: row excel: $row, line index: $errline\n";
+  $error = "Custom error:\n[$errno] $errstr\nError on line $errline in $errfile\nRow: $row";
+  writeOnLog($error);
+}
+function exceptionHandler($ex){
+  global $row;
+  $ex = "Row: $row\n$ex";
+  echo "exception\n";
+  writeOnLog($ex);
 }

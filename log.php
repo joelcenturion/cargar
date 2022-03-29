@@ -5,5 +5,5 @@ function writeOnLog($exception){
   $e = $exception;
   $e = "\n*************\n$e\n*************\n";
   file_put_contents($logPath, "$e", FILE_APPEND);
-  echo "\nException\n";
+  echo "\nWrite on Log\n";
 }
