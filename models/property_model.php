@@ -20,6 +20,9 @@ class PropertyModel {
   public $estados;
   public $zona;
   public $iva;
+  public $propietario;
+  public $telefPropietario;
+
     
   public $areasComunes = 0;
   public $cantPisos = 0;

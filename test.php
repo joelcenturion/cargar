@@ -28,10 +28,8 @@ $link3 = 'https://goo.gl/maps/tgUuQCXvqjwctkzMA';
 // getLocation($link3, $list);
 
 // var_dump($list);
-
-$precio = 'USD 300.000,5 bajo 35.000 hoy 18/09/21';
-$p = parseMoney($precio);
-var_dump($p);
+$m = "5.5%";
+echo parseComision($m);
 
 function assembleArchivos($link, $imagesPath, $idInmueble){
   $driveId = getLinkId($link);
@@ -132,4 +130,10 @@ function parseMoney($str){
   $valor = substr($str, strpos($str, ' ')+1, strlen($str));
   echo $valor."\n";
   return array($fmt->parse($valor), $simbolo);
+}
+function parseComision($str){
+  $fmt = new NumberFormatter( 'es_PY', NumberFormatter::DECIMAL );
+  $str = number_format(floatval($str), 2, ',','.');
+  $valor = $fmt->parse($str);
+  return $valor;
 }

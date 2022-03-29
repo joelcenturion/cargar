@@ -68,7 +68,7 @@ foreach($sheetData as $row => $column){
     
     $zona = $data['zona'];
     
-    if(!empty($data['fotos'])){
+    if(!empty($data['ubicacion'])){
       $location = getLocation($data['ubicacion'], $listMaps);
       if($location !== false){
         $property->latitud = $location[0];
@@ -88,9 +88,9 @@ foreach($sheetData as $row => $column){
       $descripcion = $data['descripcion'];
     } 
     
+    $property->descripcion = $descripcion;
     $length = (strlen($descripcion) < 200) ? strlen($descripcion) : 200;
     $property->titulo = substr($descripcion, 0, $length);
-    $property->descripcion = $descripcion;
     
     $property->precioAlquiler = (float) $precioAlquiler;
     $property->precioVenta = (float) $precioVenta;
@@ -102,14 +102,21 @@ foreach($sheetData as $row => $column){
     }
     
     if(!empty($data['comisionVenta'])){
-      $porcentajeComisionVenta = parseComision($data['comisionVenta']);
+      $str = $data['comisionVenta'];
+      $porcentajeComisionVenta = parseComision($str);
       if($porcentajeComisionVenta !== false){
         $property->porcentajeComisionVenta = $porcentajeComisionVenta;
         $property->comisionVenta = true;
       } 
     }
     
-    $fechaIngreso = date('Y-m-d', strtotime($data['fechaIngreso']));
+    $property->propietario = $data['propietario'];
+    $property->telefPropietario = $data['telefPropietario'];
+    
+    $property->dormitoriosSuite = empty($data['dormitoriosSuite']) ? 0 : intval($data['dormitoriosSuite']);
+    $property->dormitoriosNormales = empty($data['dormitoriosNormales']) ? 0 : intval($data['dormitoriosNormales']);
+    
+    $fechaIngreso = empty($data['fechaIngreso'])?date('Y-m-d'):date('Y-m-d', strtotime($data['fechaIngreso']));
     $property->fechaIngreso = $fechaIngreso;
     
     $estado = new Estado();
@@ -198,9 +205,9 @@ function getData($c){
     'iva' => trim($c['O']) == '-'? '' : trim($c['O']),
     'comisionVenta' => trim($c['P']) == '-'? '' : trim($c['P']),
     'propietario' => trim($c['Q']) == '-'? '' : trim($c['Q']),
-    'telef' => trim($c['R']) == '-'? '' : trim($c['R']),
-    'dormSuite' => trim($c['S']) == '-'? '' : trim($c['S']),
-    'dormNormal' => trim($c['T']) == '-'? '' : trim($c['T']),
+    'telefPropietario' => trim($c['R']) == '-'? '' : trim($c['R']),
+    'dormitoriosSuite' => trim($c['S']) == '-'? '' : trim($c['S']),
+    'dormitoriosNormales' => trim($c['T']) == '-'? '' : trim($c['T']),
     'estado' => trim($c['U']) == '-'? '' : trim($c['U']),
     'amoblado' => trim($c['V']) == '-'? '' : trim($c['V']),
     'baulera' => trim($c['W']) == '-'? '' : trim($c['W']),
@@ -304,6 +311,7 @@ function getFromCsv($csvPath){
 
 function parseComision($str){
   $fmt = new NumberFormatter( 'es_PY', NumberFormatter::DECIMAL );
+  $str = number_format(floatval($str), 2, ',','.');
   $valor = $fmt->parse($str);
   return $valor;
 }
