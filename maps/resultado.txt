@@ -1,0 +1,567 @@
+Remaining: 282 - Success: 0 - Failed: 0
+Failed: https://maps.app.goo.gl/1sRhdEYugsY62Q2G6
+    [Remaining: 281 - Success: 0 - Failed: 1]
+Failed: https://maps.app.goo.gl/zoMvaAWcYhoLeygG6
+    [Remaining: 280 - Success: 0 - Failed: 2]
+https://goo.gl/maps/pfFMxmoPTfbq7icL9;-25.284028,-57.6135983
+    [Remaining: 279 - Success: 1 - Failed: 2]
+https://goo.gl/maps/19uWUhcjJFpXnZBw8;-25.2864276,-57.5589127
+    [Remaining: 278 - Success: 2 - Failed: 2]
+https://goo.gl/maps/tgUuQCXvqjwctkzMA;-25.2889389,-57.5446559
+    [Remaining: 277 - Success: 3 - Failed: 2]
+Failed: https://goo.gl/maps/V6ifnc9bsTb216en6
+    [Remaining: 276 - Success: 3 - Failed: 3]
+https://goo.gl/maps/6c6cfKYpuY2ML5MQ8;-25.2961521,-57.6152564
+    [Remaining: 275 - Success: 4 - Failed: 3]
+https://goo.gl/maps/LtGkZ2onZyWd9CmdA;-25.2899525,-57.6111581
+    [Remaining: 274 - Success: 5 - Failed: 3]
+https://goo.gl/maps/QeWhgiuiEvcGDcuq7;-25.2931562,-57.5571911
+    [Remaining: 273 - Success: 6 - Failed: 3]
+https://goo.gl/maps/wbxPnpmUXPjVQaJz5;-25.2849611,-57.6053637
+    [Remaining: 272 - Success: 7 - Failed: 3]
+https://goo.gl/maps/FpVXhuGedFu6FWpKA;-25.2801356,-57.5703757
+    [Remaining: 271 - Success: 8 - Failed: 3]
+https://goo.gl/maps/Dr4vX3e1AihMgE5PA;-25.3119003,-57.5526869
+    [Remaining: 270 - Success: 9 - Failed: 3]
+https://goo.gl/maps/pXGZ7sRuwUQ8nJtS7;-25.2773431,-57.5663146
+    [Remaining: 269 - Success: 10 - Failed: 3]
+https://goo.gl/maps/AVDb1rZcmUQNsj5e8;-25.2844325,-57.5511842
+    [Remaining: 268 - Success: 11 - Failed: 3]
+https://goo.gl/maps/o1BymhaEHEDXjXLE9;-25.2862959,-57.5518664
+    [Remaining: 267 - Success: 12 - Failed: 3]
+Failed: https://maps.app.goo.gl/wsnQdrDqN2qha1SV7
+    [Remaining: 266 - Success: 12 - Failed: 4]
+Failed: https://maps.app.goo.gl/WeKeZmUeq6CZoUcs7
+    [Remaining: 265 - Success: 12 - Failed: 5]
+Failed: https://maps.app.goo.gl/czLqZxjMntzazAHB9
+    [Remaining: 264 - Success: 12 - Failed: 6]
+https://goo.gl/maps/xg7uEVmoZmnxaNrA8;-25.2916377,-57.6119687
+    [Remaining: 263 - Success: 13 - Failed: 6]
+https://goo.gl/maps/n6HWbghWhc6ToDwY6;-25.2857083,-57.6145853
+    [Remaining: 262 - Success: 14 - Failed: 6]
+https://goo.gl/maps/fYV8edZpH1cqJQuc9;-25.2845967,-57.6146554
+    [Remaining: 261 - Success: 15 - Failed: 6]
+Failed: https://maps.google.com/?q=Cero%20Uno%20Mburucuyá,%20Vicente%20Flores%201582,%20Asunción&ftid=0x945da7478c7ab089:0xa69ece91f954dd02&hl=en-US&gl=us&entry=gps&lucs=s2se
+    [Remaining: 260 - Success: 15 - Failed: 7]
+https://goo.gl/maps/8c8BZRN3PSbBuMLc7;-25.2648146,-57.5732619
+    [Remaining: 259 - Success: 16 - Failed: 7]
+https://goo.gl/maps/RTFvAJqFsBPL6Ds3A;-25.274115,-57.5591674
+    [Remaining: 258 - Success: 17 - Failed: 7]
+Failed: https://maps.app.goo.gl/1sRhdEYugsY62Q2G6
+    [Remaining: 257 - Success: 17 - Failed: 8]
+Failed: https://goo.gl/maps/hJPs1jAYQxgVztTRA
+    [Remaining: 256 - Success: 17 - Failed: 9]
+Failed: https://maps.app.goo.gl/yyEHiiCBj39HSyzF6
+    [Remaining: 255 - Success: 17 - Failed: 10]
+Failed: https://maps.app.goo.gl/VryUJV2EMiZCRsSK8
+    [Remaining: 254 - Success: 17 - Failed: 11]
+https://goo.gl/maps/3J5wVKHhENNApdcb8;-25.2977714,-57.5869429
+    [Remaining: 253 - Success: 18 - Failed: 11]
+https://goo.gl/maps/dhqJPr3yXRVPf6By5;-25.3148146,-57.6123445
+    [Remaining: 252 - Success: 19 - Failed: 11]
+https://goo.gl/maps/4QoZhkqrCD1WXdsN7;-25.2869009,-57.5749501
+    [Remaining: 251 - Success: 20 - Failed: 11]
+https://goo.gl/maps/foMMeFSkSt2mXdaq6;-25.2861079,-57.6315318
+    [Remaining: 250 - Success: 21 - Failed: 11]
+Failed: https://maps.app.goo.gl/nGUbPfppBLWLgnGp7
+    [Remaining: 249 - Success: 21 - Failed: 12]
+https://goo.gl/maps/pxzABKiWBCK31q987;-25.2895428,-57.5924954
+    [Remaining: 248 - Success: 22 - Failed: 12]
+https://goo.gl/maps/8YK8qTuR6UiRdLAfA;-25.297829,-57.6089867
+    [Remaining: 247 - Success: 23 - Failed: 12]
+https://goo.gl/maps/Hhh8dhg2b6uzYx5YA;-25.2938024,-57.5584375
+    [Remaining: 246 - Success: 24 - Failed: 12]
+https://goo.gl/maps/TAaM79cc11pRdxds6;-25.2951141,-57.5589997
+    [Remaining: 245 - Success: 25 - Failed: 12]
+https://goo.gl/maps/4qoXnb9DoevQ6g1X6;-25.2699121,-57.5922747
+    [Remaining: 244 - Success: 26 - Failed: 12]
+https://goo.gl/maps/JZxY1x2rA9cn44wdA;-25.2711425,-57.5906463
+    [Remaining: 243 - Success: 27 - Failed: 12]
+https://goo.gl/maps/zSqCuEhvQ9QYtwXr5;-25.3367706,-57.5861625
+    [Remaining: 242 - Success: 28 - Failed: 12]
+https://goo.gl/maps/TGbhec9CSWJ15evB8;-25.2663426,-57.5945458
+    [Remaining: 241 - Success: 29 - Failed: 12]
+https://goo.gl/maps/1wpSCQKzCqawdEQs9;-25.2878039,-57.5365794
+    [Remaining: 240 - Success: 30 - Failed: 12]
+Failed: https://g.page/muhradapy?share
+    [Remaining: 239 - Success: 30 - Failed: 13]
+https://maps.app.goo.gl/po4ssieZupKgB84MA;-25.288495,-57.626902
+    [Remaining: 238 - Success: 31 - Failed: 13]
+Failed: https://maps.app.goo.gl/eWFq4NhLzD346Lx76
+    [Remaining: 237 - Success: 31 - Failed: 14]
+Failed: https://maps.app.goo.gl/u7x6bs49hFMx3Fda6
+    [Remaining: 236 - Success: 31 - Failed: 15]
+Failed: https://g.page/?share
+    [Remaining: 235 - Success: 31 - Failed: 16]
+https://goo.gl/maps/XPZcgJfyQuHGmmMeA;-25.2906335,-57.6131168
+    [Remaining: 234 - Success: 32 - Failed: 16]
+https://goo.gl/maps/4rdxMNDc7gyDTMfT9;-25.285339,-57.6186045
+    [Remaining: 233 - Success: 33 - Failed: 16]
+https://goo.gl/maps/p86oyzvcysCWsLgP6;-25.2784536,-57.6076951
+    [Remaining: 232 - Success: 34 - Failed: 16]
+https://goo.gl/maps/P6C7AQNv3EFUzV4KA;-25.2912698,-57.5819048
+    [Remaining: 231 - Success: 35 - Failed: 16]
+https://goo.gl/maps/6dxRaq3KXCJfXpXx8;-25.2971814,-57.586796
+    [Remaining: 230 - Success: 36 - Failed: 16]
+https://goo.gl/maps/SQUZN2BdrgxfumeX7;-25.263397,-57.5594196
+    [Remaining: 229 - Success: 37 - Failed: 16]
+https://goo.gl/maps/ZLMgAFX8gtMbZngV8;-25.2689757,-57.5753939
+    [Remaining: 228 - Success: 38 - Failed: 16]
+https://goo.gl/maps/m9wr5hTV224V8YUf6;-25.2624467,-57.5764455
+    [Remaining: 227 - Success: 39 - Failed: 16]
+https://goo.gl/maps/qcJaq6UwGWCNbR3p9;-25.2731955,-57.587954
+    [Remaining: 226 - Success: 40 - Failed: 16]
+https://goo.gl/maps/45bbUBfKp91nM3ou7;-25.2766546,-57.568127
+    [Remaining: 225 - Success: 41 - Failed: 16]
+https://goo.gl/maps/XE4z8nvbrE8Dupft7;-25.2779123,-57.5685465
+    [Remaining: 224 - Success: 42 - Failed: 16]
+https://goo.gl/maps/m1vMqCJ6cxhC32Jd8;-25.2825994,-57.6361752
+    [Remaining: 223 - Success: 43 - Failed: 16]
+https://goo.gl/maps/b43sh3sQCWrjKiwa8;-25.285031,-57.561909
+    [Remaining: 222 - Success: 44 - Failed: 16]
+https://goo.gl/maps/HWSCUJNYHCT6JYWNA;-25.2848864,-57.5611436
+    [Remaining: 221 - Success: 45 - Failed: 16]
+Failed: https://g.page/town-house-palermo?share
+    [Remaining: 220 - Success: 45 - Failed: 17]
+https://goo.gl/maps/Sov4dizWzWXatxVd8;-25.2811685,-57.5817383
+    [Remaining: 219 - Success: 46 - Failed: 17]
+Failed: https://www.google.com/maps/place/Edificio+Altos+de+Siria,+Jara,+Asunción/data=!4m2!3m1!1s0x945da7eddd55779d:0x98d2f14b7972092d?utm_source=mstt_1&entry=gps
+    [Remaining: 218 - Success: 46 - Failed: 18]
+Failed: https://www.google.com/maps/place/Soluciones+Contables,+Avenida+España+casi,+Asunción/data=!4m6!3m5!1s0x945da7d442fb5055:0xeec9c18e55c8923a!7e2!8m2!3d-25.287140599999997!4d-57.5951635?utm_source=mstt_1&entry=gps
+    [Remaining: 217 - Success: 46 - Failed: 19]
+https://maps.app.goo.gl/AsXzSbmKe5arfnyG8;-25.297831,-57.606847
+    [Remaining: 216 - Success: 47 - Failed: 19]
+https://goo.gl/maps/ARP3UdRxcHza6eLY8;-25.2929912,-57.64024
+    [Remaining: 215 - Success: 48 - Failed: 19]
+https://goo.gl/maps/FQJL91f5JnbyPKzZ7;-25.305481,-57.5686115
+    [Remaining: 214 - Success: 49 - Failed: 19]
+https://goo.gl/maps/p4E1vLxSC9gvDos79;-25.2976747,-57.5780705
+    [Remaining: 213 - Success: 50 - Failed: 19]
+https://goo.gl/maps/hfwFZ8edkxPV9iUX6;-25.3083712,-57.569599
+    [Remaining: 212 - Success: 51 - Failed: 19]
+https://goo.gl/maps/Du86RpBQuAzwuNZHA;-25.2996486,-57.5783137
+    [Remaining: 211 - Success: 52 - Failed: 19]
+https://goo.gl/maps/WxpcqKjEeXdNx6TdA;-25.3001904,-57.5740378
+    [Remaining: 210 - Success: 53 - Failed: 19]
+https://goo.gl/maps/YXDjf7WhHnDXG89b6;-25.303035,-57.5572303
+    [Remaining: 209 - Success: 54 - Failed: 19]
+https://www.google.com/maps/place/Edificio+Forum+Herrera/@-25.2956419,-57.5584406,17z/data=!3m1!4b1!4m5!3m4!1s0x945da90bbcf792d7:0x8071dd7b1ec318d2!8m2!3d-25.2956583!4d-57.5562598;-25.2956419,-57.5584406
+    [Remaining: 208 - Success: 55 - Failed: 19]
+https://goo.gl/maps/JSnJsWRUzNCJYEAu5;-25.3062477,-57.5994139
+    [Remaining: 207 - Success: 56 - Failed: 19]
+https://goo.gl/maps/je1AEFRwHD2NGB47A;-25.2864229,-57.5834462
+    [Remaining: 206 - Success: 57 - Failed: 19]
+https://goo.gl/maps/d5kdAc7CBLB26SLN9;-25.2830162,-57.5823279
+    [Remaining: 205 - Success: 58 - Failed: 19]
+https://goo.gl/maps/WbUMMogwNHhMKJ6S6;-25.2900755,-57.5474365
+    [Remaining: 204 - Success: 59 - Failed: 19]
+https://goo.gl/maps/LWafDNwAp3foteQM8;-25.2786368,-57.5631043
+    [Remaining: 203 - Success: 60 - Failed: 19]
+https://goo.gl/maps/UfGQJ4xuH5w3Nu1h9;-25.2909704,-57.5822506
+    [Remaining: 202 - Success: 61 - Failed: 19]
+https://goo.gl/maps/3vL5oSGZZrd3kQXa6;-25.2944927,-57.3064896
+    [Remaining: 201 - Success: 62 - Failed: 19]
+Failed: https://g.page/UrbanBosquesDeVillaMorra?share
+    [Remaining: 200 - Success: 62 - Failed: 20]
+https://goo.gl/maps/HGR8fZi5y3BM8bP37;-25.2884339,-57.6205869
+    [Remaining: 199 - Success: 63 - Failed: 20]
+https://goo.gl/maps/Rkjk2FK2PLRiqV228;-25.2637279,-57.573405
+    [Remaining: 198 - Success: 64 - Failed: 20]
+https://www.google.com/maps/place/Edificio+Mirage/@-25.2760916,-57.5558351,17z/data=!3m1!4b1!4m5!3m4!1s0x945da60084a89b51:0xca17205ba08b2d3!8m2!3d-25.2760988!4d-57.5536507?hl=es-PY;-25.2760916,-57.5558351
+    [Remaining: 197 - Success: 65 - Failed: 20]
+Failed: https://goo.gl/maps/pAkqRFq3hUi3h5sq6
+    [Remaining: 196 - Success: 65 - Failed: 21]
+https://maps.app.goo.gl/pEkFBoX7MQXzRRUq6;-25.285165,-57.607306
+    [Remaining: 195 - Success: 66 - Failed: 21]
+https://goo.gl/maps/Fs7cmfoHQf2PSZDe6;-25.265489,-57.5730617
+    [Remaining: 194 - Success: 67 - Failed: 21]
+Failed: https://maps.app.goo.gl/C464aAxJFPcrWj5C6
+    [Remaining: 193 - Success: 67 - Failed: 22]
+https://goo.gl/maps/WDsggPjjCe9JUJFeA;-25.2733898,-57.5750265
+    [Remaining: 192 - Success: 68 - Failed: 22]
+https://goo.gl/maps/zMcZZ4BrZ4VuwFcU7;-25.2772025,-57.5708002
+    [Remaining: 191 - Success: 69 - Failed: 22]
+https://goo.gl/maps/AVFPAx5Htt7PTVjJ7;-25.2696185,-57.5740176
+    [Remaining: 190 - Success: 70 - Failed: 22]
+https://goo.gl/maps/fiViYstadcq9XqV17;-25.2647187,-57.5713786
+    [Remaining: 189 - Success: 71 - Failed: 22]
+https://goo.gl/maps/c3rHphLh9Ua6awbS6;-25.2873816,-57.5585142
+    [Remaining: 188 - Success: 72 - Failed: 22]
+https://goo.gl/maps/TvKtxUEiE6BpRGQWA;-25.2867038,-57.5588348
+    [Remaining: 187 - Success: 73 - Failed: 22]
+https://goo.gl/maps/8Z7oWTJuoG7fd9LT9;-25.2847202,-57.5641792
+    [Remaining: 186 - Success: 74 - Failed: 22]
+https://goo.gl/maps/EtkShDRtLm4n7xC28;-25.285329,-57.5622946
+    [Remaining: 185 - Success: 75 - Failed: 22]
+https://goo.gl/maps/ERATjmKrJ7Nwhv3a6;-25.2859927,-57.5606128
+    [Remaining: 184 - Success: 76 - Failed: 22]
+https://goo.gl/maps/RVQiFRi8zei2eRKo8;-25.2841407,-57.5617518
+    [Remaining: 183 - Success: 77 - Failed: 22]
+https://goo.gl/maps/hupPM5j11CxkN6Mz5;-25.2850004,-57.5881005
+    [Remaining: 182 - Success: 78 - Failed: 22]
+Failed: https://maps.google.com/?q=Espiritu%20Santo,%20Av.%20Sta.%20Teresa,%20Asunción&ftid=0x0:0x12cf480e13b7271c&hl=es-PY&gl=py&entry=gps&lucs=swa
+    [Remaining: 181 - Success: 78 - Failed: 23]
+https://goo.gl/maps/GaLWmS38dozsv1oF8;-25.281007,-57.5587306
+    [Remaining: 180 - Success: 79 - Failed: 23]
+https://goo.gl/maps/S5WECehVBjmu6p1JA;-25.3038294,-57.5858189
+    [Remaining: 179 - Success: 80 - Failed: 23]
+https://goo.gl/maps/skzmPoHJumn3NJG7A;-25.2871837,-57.6029668
+    [Remaining: 178 - Success: 81 - Failed: 23]
+https://goo.gl/maps/WNXZFi4Rztr93eSGA;-25.2871971,-57.6098518
+    [Remaining: 177 - Success: 82 - Failed: 23]
+https://goo.gl/maps/eJH1Zztym5o6pBEA8;-25.2942102,-57.6167602
+    [Remaining: 176 - Success: 83 - Failed: 23]
+https://goo.gl/maps/EpvHGxDRjWruq1keA;-25.2855534,-57.6197934
+    [Remaining: 175 - Success: 84 - Failed: 23]
+Failed: https://maps.app.goo.gl/CQMyGtEPmhxs6GqBA
+    [Remaining: 174 - Success: 84 - Failed: 24]
+https://goo.gl/maps/69hS9aAvebPY18jV9;-25.2926898,-57.6113656
+    [Remaining: 173 - Success: 85 - Failed: 24]
+https://goo.gl/maps/CNuBkMMzTLLP67ZY6;-25.2842004,-57.6163695
+    [Remaining: 172 - Success: 86 - Failed: 24]
+https://goo.gl/maps/fDbZN4bsSKryDcH2A;-25.2829122,-57.6376278
+    [Remaining: 171 - Success: 87 - Failed: 24]
+https://goo.gl/maps/tP3K2sGZn1PcS9vQ9;-25.2752679,-57.5976159
+    [Remaining: 170 - Success: 88 - Failed: 24]
+https://goo.gl/maps/nj2nSH3o1TBbM8VU6;-25.2996437,-57.5783137
+    [Remaining: 169 - Success: 89 - Failed: 24]
+https://goo.gl/maps/PhCdXSo7LDoRn7aj9;-25.2774982,-57.5963364
+    [Remaining: 168 - Success: 90 - Failed: 24]
+https://www.google.com/maps/place/Eusebio+Lillo+Robles,+Asunci%C3%B3n/@-25.2882767,-57.5764809,17z/data=!4m5!3m4!1s0x945da8af8f432649:0x6c4d5edefe42d0c8!8m2!3d-25.2912692!4d-57.5681468?hl=en;-25.2882767,-57.5764809
+    [Remaining: 167 - Success: 91 - Failed: 24]
+https://goo.gl/maps/hGbdm4wNeEvxKp9u6;-25.2749081,-57.5547819
+    [Remaining: 166 - Success: 92 - Failed: 24]
+Failed: https://goo.gl/maps/iim8B6s98VxzM8kT6
+    [Remaining: 165 - Success: 92 - Failed: 25]
+https://goo.gl/maps/AKJvFF2m75oGT2gf7;-25.26156,-57.5733177
+    [Remaining: 164 - Success: 93 - Failed: 25]
+https://goo.gl/maps/CtioPsy51PtChxuUA;-25.2630879,-57.563052
+    [Remaining: 163 - Success: 94 - Failed: 25]
+https://goo.gl/maps/CjsGLoynmf2z8xSb7;-25.2635749,-57.5630781
+    [Remaining: 162 - Success: 95 - Failed: 25]
+https://goo.gl/maps/qswvavSZ7jx7AUpA8;-25.265813,-57.5622787
+    [Remaining: 161 - Success: 96 - Failed: 25]
+https://goo.gl/maps/9rNpYXS9iMrvzYMA7;-25.2652470,-57.5530969
+    [Remaining: 160 - Success: 97 - Failed: 25]
+https://goo.gl/maps/6zY2KGtXL3396wL26;-25.2735291,-57.5552597
+    [Remaining: 159 - Success: 98 - Failed: 25]
+https://goo.gl/maps/1wBP55CyXJ5ai7sK6;-25.2662058,-57.5644179
+    [Remaining: 158 - Success: 99 - Failed: 25]
+https://goo.gl/maps/UeTSHFpdh6QibvHN9;-25.2697101,-57.5763319
+    [Remaining: 157 - Success: 100 - Failed: 25]
+https://goo.gl/maps/biSZSC867JZuB7A3A;-25.2694861,-57.5735158
+    [Remaining: 156 - Success: 101 - Failed: 25]
+https://maps.app.goo.gl/EcQRueXYhNQyZAy47;-25.268841,-57.572190
+    [Remaining: 155 - Success: 102 - Failed: 25]
+https://maps.app.goo.gl/UaL4hcjwdFz5fYxM8;-25.261993,-57.576874
+    [Remaining: 154 - Success: 103 - Failed: 25]
+https://goo.gl/maps/cag1cwSZcQQeFYM17;-25.2806,-57.5659497
+    [Remaining: 153 - Success: 104 - Failed: 25]
+https://goo.gl/maps/qddZxDPLvoad4sSv7;-25.2787222,-57.5670776
+    [Remaining: 152 - Success: 105 - Failed: 25]
+https://goo.gl/maps/JXQd5kunzGbha3iK6;-25.2739187,-57.5733221
+    [Remaining: 151 - Success: 106 - Failed: 25]
+https://maps.app.goo.gl/i1uqZfJEYwdAWcqU7;-25.276461,-57.569501
+    [Remaining: 150 - Success: 107 - Failed: 25]
+https://goo.gl/maps/rPANPjT3qYJULrx57;-25.277836,-57.5863357
+    [Remaining: 149 - Success: 108 - Failed: 25]
+https://goo.gl/maps/3wavznkUwwWXgTHKA;-25.279488,-57.5862695
+    [Remaining: 148 - Success: 109 - Failed: 25]
+https://maps.app.goo.gl/UzYfaGq7Q4pRHLZY7;-25.277543,-57.584594
+    [Remaining: 147 - Success: 110 - Failed: 25]
+https://goo.gl/maps/sXQtYRLLMLZ4RQDb8;-25.2654268,-57.5580369
+    [Remaining: 146 - Success: 111 - Failed: 25]
+https://goo.gl/maps/TvEqAoEzFAwtU5x77;-25.2657431,-57.560704
+    [Remaining: 145 - Success: 112 - Failed: 25]
+Failed: https://maps.app.goo.gl/CDT5vkY4P1DVQbok9
+    [Remaining: 144 - Success: 112 - Failed: 26]
+https://goo.gl/maps/YSDisriksdy9f5zK7;-25.2847805,-57.5763807
+    [Remaining: 143 - Success: 113 - Failed: 26]
+https://goo.gl/maps/5oYArLoznXXXigjp8;-25.2830544,-57.5781499
+    [Remaining: 142 - Success: 114 - Failed: 26]
+https://goo.gl/maps/PWsPpQtSuKp4zz7p8;-25.3100142,-57.5832812
+    [Remaining: 141 - Success: 115 - Failed: 26]
+https://goo.gl/maps/YP6C9erqSrVuGX7j7;-25.3137989,-57.5786772
+    [Remaining: 140 - Success: 116 - Failed: 26]
+https://goo.gl/maps/UVCtfhqvRB8pXbHc6;-25.2939706,-57.5542712
+    [Remaining: 139 - Success: 117 - Failed: 26]
+https://goo.gl/maps/5HF3J1t5FNEqmL9u7;-25.292052,-57.6131232
+    [Remaining: 138 - Success: 118 - Failed: 26]
+Failed: https://goo.gl/maps/V8um6faUebqWH4bh6
+    [Remaining: 137 - Success: 118 - Failed: 27]
+https://maps.app.goo.gl/YYuQar9qvLbdNpWV7;-25.283134,-57.613079
+    [Remaining: 136 - Success: 119 - Failed: 27]
+https://goo.gl/maps/XqVnx3xoRknHDSKNA;-25.2851497,-57.6068654
+    [Remaining: 135 - Success: 120 - Failed: 27]
+https://maps.app.goo.gl/ub9wYV4qCcaEiNb98;-25.292992,-57.568108
+    [Remaining: 134 - Success: 121 - Failed: 27]
+https://goo.gl/maps/3AxA9ewDMTthVXU6A;-25.2972475,-57.5659003
+    [Remaining: 133 - Success: 122 - Failed: 27]
+https://goo.gl/maps/n48bbPcT2Fsnk9vL7;-25.3042795,-57.5784515
+    [Remaining: 132 - Success: 123 - Failed: 27]
+https://goo.gl/maps/kGokXCSzKcDZFdh99;-25.3061506,-57.5798399
+    [Remaining: 131 - Success: 124 - Failed: 27]
+https://goo.gl/maps/MA9HcZ8Yau5XrXqT9;-25.3037968,-57.5681181
+    [Remaining: 130 - Success: 125 - Failed: 27]
+https://goo.gl/maps/oVm5ZTKEtnhqHCEBA;-25.3014183,-57.5745726
+    [Remaining: 129 - Success: 126 - Failed: 27]
+https://goo.gl/maps/peDGfi3a25gDTa147;-25.3043461,-57.5786543
+    [Remaining: 128 - Success: 127 - Failed: 27]
+https://goo.gl/maps/An1i6CPBUYBEKFeK6;-25.3053048,-57.580293
+    [Remaining: 127 - Success: 128 - Failed: 27]
+https://goo.gl/maps/9Y1SwEe8k6QCgoSX7;-25.308531,-57.5699112
+    [Remaining: 126 - Success: 129 - Failed: 27]
+https://goo.gl/maps/54kLSaakG3DBEBnJ7;-25.3020821,-57.5721731
+    [Remaining: 125 - Success: 130 - Failed: 27]
+https://goo.gl/maps/6GWphYTBkC7kARw76;-25.296616,-57.6011317
+    [Remaining: 124 - Success: 131 - Failed: 27]
+https://goo.gl/maps/1S4zYGm96aFsWb8c9;-25.2933228,-57.5958919
+    [Remaining: 123 - Success: 132 - Failed: 27]
+https://goo.gl/maps/DE4tfw9D1Gv2HJgD7;-25.295319,-57.6011297
+    [Remaining: 122 - Success: 133 - Failed: 27]
+https://goo.gl/maps/E7QwrUYca84nKAqv6;-25.2942829,-57.6009894
+    [Remaining: 121 - Success: 134 - Failed: 27]
+https://goo.gl/maps/jnwgahJf7SuJWQ7r9;-25.2961462,-57.6004959
+    [Remaining: 120 - Success: 135 - Failed: 27]
+https://goo.gl/maps/o4WbqYejA2nDSJAR8;-25.3242226,-57.626544
+    [Remaining: 119 - Success: 136 - Failed: 27]
+https://goo.gl/maps/iPxJs6hwSCXkkDWt8;-25.2894726,-57.5531111
+    [Remaining: 118 - Success: 137 - Failed: 27]
+https://goo.gl/maps/pVBAaYnNwRv6atkD8;-25.3038649,-57.5857582
+    [Remaining: 117 - Success: 138 - Failed: 27]
+https://goo.gl/maps/ec4iWbxj5n9usULB9;-25.2787983,-57.5434155
+    [Remaining: 116 - Success: 139 - Failed: 27]
+https://goo.gl/maps/ur328fdgEp8jiV9i9;-25.266161,-57.5089331
+    [Remaining: 115 - Success: 140 - Failed: 27]
+https://maps.app.goo.gl/yscYLs8bBMbFqMKbA;-25.313130,-57.595691
+    [Remaining: 114 - Success: 141 - Failed: 27]
+Failed: https://maps.app.goo.gl/2bm9nb6Mz1TeFWSm8
+    [Remaining: 113 - Success: 141 - Failed: 28]
+https://goo.gl/maps/3U6eaS7LDrYuz9vW8;-25.313199,-57.5307421
+    [Remaining: 112 - Success: 142 - Failed: 28]
+https://goo.gl/maps/9zCU4SjRbLVkmDYJ6;-25.291402,-57.5989392
+    [Remaining: 111 - Success: 143 - Failed: 28]
+https://goo.gl/maps/SvfWaK6dcNsPQ9r8A;-25.291481,-57.6145882
+    [Remaining: 110 - Success: 144 - Failed: 28]
+https://goo.gl/maps/k5H8QKrTDQRtb6ZV8;-25.2725,-57.6032165
+    [Remaining: 109 - Success: 145 - Failed: 28]
+https://goo.gl/maps/F6eE2PyiDafmGnFM7;-25.2949167,-57.6099387
+    [Remaining: 108 - Success: 146 - Failed: 28]
+https://goo.gl/maps/eSBwQqW4EZA8xsym7;-25.2879698,-57.5688506
+    [Remaining: 107 - Success: 147 - Failed: 28]
+https://goo.gl/maps/ZEaMtAkMny8yKfeX7;-25.2889999,-57.5837586
+    [Remaining: 106 - Success: 148 - Failed: 28]
+https://goo.gl/maps/yPVDrtjUv7q5uRt8A;-25.3186035,-57.6346864
+    [Remaining: 105 - Success: 149 - Failed: 28]
+https://goo.gl/maps/pANPbv9S4KNYwQRVA;-25.332782,-57.6341522
+    [Remaining: 104 - Success: 150 - Failed: 28]
+https://goo.gl/maps/N5YLBy3vHZyMsqqr6;-25.2853411,-57.6219502
+    [Remaining: 103 - Success: 151 - Failed: 28]
+https://goo.gl/maps/BdZruBZXGEJm8Fjv7;-25.2798729,-57.6411006
+    [Remaining: 102 - Success: 152 - Failed: 28]
+https://goo.gl/maps/JsMfVFPunerHQisv6;-25.2691983,-57.5672862
+    [Remaining: 101 - Success: 153 - Failed: 28]
+https://goo.gl/maps/2EMi6te7x7cUypNR7;-25.2856439,-57.6408294
+    [Remaining: 100 - Success: 154 - Failed: 28]
+https://goo.gl/maps/KfNR2FnUvUJ3rAqb8;-25.2878594,-57.5813109
+    [Remaining: 99 - Success: 155 - Failed: 28]
+https://goo.gl/maps/6qG33JGqfhCakbAw6;-25.2874763,-57.6296803
+    [Remaining: 98 - Success: 156 - Failed: 28]
+https://goo.gl/maps/cEHT1LxMzuibJD36A;-25.3721142,-57.6288901
+    [Remaining: 97 - Success: 157 - Failed: 28]
+https://goo.gl/maps/nEzQ7eVLCvqVM7Ng6;-25.2303047,-57.5284872
+    [Remaining: 96 - Success: 158 - Failed: 28]
+https://goo.gl/maps/wbktYHD4sV9tQaMv6;-25.177831,-57.5111867
+    [Remaining: 95 - Success: 159 - Failed: 28]
+https://goo.gl/maps/EwGRpcrQGZwcFUHaA;-25.297474,-57.2719412
+    [Remaining: 94 - Success: 160 - Failed: 28]
+https://goo.gl/maps/u22BRupFw5rxJy417;-25.3202481,-57.2885245
+    [Remaining: 93 - Success: 161 - Failed: 28]
+https://goo.gl/maps/PiUgLCPGgrNk5BaB8;-25.3547699,-57.2716069
+    [Remaining: 92 - Success: 162 - Failed: 28]
+https://goo.gl/maps/cWagzncnQuo82Fb77;-25.3093365,-57.2932544
+    [Remaining: 91 - Success: 163 - Failed: 28]
+https://goo.gl/maps/TfX54nW2H5FDxf278 ;-25.3109289,-57.2987874
+    [Remaining: 90 - Success: 164 - Failed: 28]
+https://www.google.com/maps/place/25%C2%B016'16.0%22S+57%C2%B034'12.5%22W/@-25.2711904,-57.5699315,19.25z/data=!4m5!3m4!1s0x0:0xd699d22f5918c8f6!8m2!3d-25.2710997!4d-57.570135?hl=es-PY;-25.2711904,-57.5699315
+    [Remaining: 89 - Success: 165 - Failed: 28]
+https://goo.gl/maps/jxGSFBivJtehyyDq5;-25.3074027,-57.58445
+    [Remaining: 88 - Success: 166 - Failed: 28]
+https://goo.gl/maps/BEUgVYkCRRyGXLwV8;-25.3074027,-57.58445
+    [Remaining: 87 - Success: 167 - Failed: 28]
+https://goo.gl/maps/XUbCRdVLoYGTWzzu6;-25.3074027,-57.58445
+    [Remaining: 86 - Success: 168 - Failed: 28]
+https://goo.gl/maps/oqXDq2Ma4QJ2nPpm7;-25.2631534,-57.5634072
+    [Remaining: 85 - Success: 169 - Failed: 28]
+https://goo.gl/maps/tGAXMhM7kW1BU5ey5;-25.271173,-57.5713977
+    [Remaining: 84 - Success: 170 - Failed: 28]
+https://goo.gl/maps/6TLSbSaoSvGpeFps6;-25.266674,-57.5625906
+    [Remaining: 83 - Success: 171 - Failed: 28]
+https://goo.gl/maps/WPMGUhuTic4Bj8JV9;-25.2903652,-57.5647116
+    [Remaining: 82 - Success: 172 - Failed: 28]
+https://goo.gl/maps/Dob41qkkU4ewzQkcA;-25.2743407,-57.5617253
+    [Remaining: 81 - Success: 173 - Failed: 28]
+https://goo.gl/maps/4wy6eZPd5f1RJ6Wx8;-25.305537,-57.5566587
+    [Remaining: 80 - Success: 174 - Failed: 28]
+https://maps.google.com/?q=-25.301510,-57.559765;-25.301510,-57.559765
+    [Remaining: 79 - Success: 175 - Failed: 28]
+https://goo.gl/maps/i4guvUimY7VbjXTD9;-25.301938,-57.5497627
+    [Remaining: 78 - Success: 176 - Failed: 28]
+https://goo.gl/maps/53to7GFHcGNgcaaMA;-25.3107624,-57.61518
+    [Remaining: 77 - Success: 177 - Failed: 28]
+https://goo.gl/maps/UyoEHT3MNzzcAjXt7;-25.298996,-57.5840117
+    [Remaining: 76 - Success: 178 - Failed: 28]
+https://goo.gl/maps/k8b3obwErr3nGdf96;-25.293289,-57.5019257
+    [Remaining: 75 - Success: 179 - Failed: 28]
+https://goo.gl/maps/ESeVSNaY5w8Q4m5Q7;-25.2991113,-57.5360746
+    [Remaining: 74 - Success: 180 - Failed: 28]
+https://goo.gl/maps/PDS3Co1pXBWZuNrb9;-25.3560919,-57.6276351
+    [Remaining: 73 - Success: 181 - Failed: 28]
+https://goo.gl/maps/XLMnyiu7hnUoaG199;-25.3731174,-57.6273413
+    [Remaining: 72 - Success: 182 - Failed: 28]
+https://goo.gl/maps/3ThsKJVbTEqsCv5n8;-25.2598629,-57.5749579
+    [Remaining: 71 - Success: 183 - Failed: 28]
+https://goo.gl/maps/fvhAKQ75MkccfEPB8;-25.298163,-57.5891792
+    [Remaining: 70 - Success: 184 - Failed: 28]
+https://goo.gl/maps/pAXu5JitiH4ez3hH6;-25.2836419,-57.595289
+    [Remaining: 69 - Success: 185 - Failed: 28]
+https://goo.gl/maps/CTJ7wnt57dmkSn1L9;-25.2404547,-57.5078652
+    [Remaining: 68 - Success: 186 - Failed: 28]
+https://goo.gl/maps/j2esD7DpYWZ9yaZh6;-25.2522278,-57.5062794
+    [Remaining: 67 - Success: 187 - Failed: 28]
+Failed: https://maps.app.goo.gl/GjLfANS2NBBeTiQc9
+    [Remaining: 66 - Success: 187 - Failed: 29]
+https://goo.gl/maps/LNZnqW6iZKgvXnN66;-25.2897632,-57.5407568
+    [Remaining: 65 - Success: 188 - Failed: 29]
+https://goo.gl/maps/h5mSK1pGU9ZG4FgL8;-25.2430897,-57.4511976
+    [Remaining: 64 - Success: 189 - Failed: 29]
+https://goo.gl/maps/rp3jEkYZ5b6KAy4j7;-25.289751,-57.5430444
+    [Remaining: 63 - Success: 190 - Failed: 29]
+https://www.google.com/maps/place/-25.260972,-57.507449/data=!4m6!3m5!1s0!7e2!8m2!3d-25.2609721!4d-57.5074488?utm_source=mstt_1&entry=gps&lucs=le;-25.260972,-57.507449
+    [Remaining: 62 - Success: 191 - Failed: 29]
+https://goo.gl/maps/fT4ZXDbEtYRBv6sb6;-25.263804,-57.5080082
+    [Remaining: 61 - Success: 192 - Failed: 29]
+https://goo.gl/maps/6bAfvETj43GuRCfq8;-25.2682069,-57.5675346
+    [Remaining: 60 - Success: 193 - Failed: 29]
+https://goo.gl/maps/mBggqHK1qBCFvRqS6;-25.2716637,-57.5734091
+    [Remaining: 59 - Success: 194 - Failed: 29]
+https://goo.gl/maps/zJM2GE2RmyxmJRKy7;-25.2939595,-57.5526718
+    [Remaining: 58 - Success: 195 - Failed: 29]
+https://goo.gl/maps/6kzi1FY2cgguMtHRA;-25.3012321,-57.5593118
+    [Remaining: 57 - Success: 196 - Failed: 29]
+https://maps.app.goo.gl/5NYh5qpLK545m2ySA;-25.278142,-57.584158
+    [Remaining: 56 - Success: 197 - Failed: 29]
+https://goo.gl/maps/GMEt56qXQ6NzS2RJA;-25.3005962,-57.6027174
+    [Remaining: 55 - Success: 198 - Failed: 29]
+https://maps.app.goo.gl/Jskc8pac22gApiXL8;-25.285887,-57.575665
+    [Remaining: 54 - Success: 199 - Failed: 29]
+https://goo.gl/maps/2pXystSZD7Y4mpba9;-25.2880698,-57.5796452
+    [Remaining: 53 - Success: 200 - Failed: 29]
+https://maps.app.goo.gl/66FpTc2UQF2q8hrq5;-25.303229,-57.582492
+    [Remaining: 52 - Success: 201 - Failed: 29]
+https://maps.app.goo.gl/h6ZjdvpTPN7TShcg9;-25.280029,-57.641901
+    [Remaining: 51 - Success: 202 - Failed: 29]
+https://goo.gl/maps/18g7t4MbqZuYFTme9;-25.2795852,-57.6424687
+    [Remaining: 50 - Success: 203 - Failed: 29]
+https://goo.gl/maps/LezbBe7C9PkLCePNA;-25.2672997,-57.5793871
+    [Remaining: 49 - Success: 204 - Failed: 29]
+https://goo.gl/maps/Zzei6GmGQzQ2P9kk6;-25.279857,-57.5657757
+    [Remaining: 48 - Success: 205 - Failed: 29]
+https://goo.gl/maps/WFDwnE3ZMWgs2Dyj8;-25.280932,-57.5662977
+    [Remaining: 47 - Success: 206 - Failed: 29]
+Failed: https://g.page/kafatostadores?share
+    [Remaining: 46 - Success: 206 - Failed: 30]
+https://goo.gl/maps/Xo2FLodCmk314Ryu5;-25.2815817,-57.6133524
+    [Remaining: 45 - Success: 207 - Failed: 30]
+https://goo.gl/maps/ERGx96CDwpcyGuey8;-25.290685,-57.6140892
+    [Remaining: 44 - Success: 208 - Failed: 30]
+https://goo.gl/maps/R2f9j61ETGeYSkY56;-25.2841118,-57.6148822
+    [Remaining: 43 - Success: 209 - Failed: 30]
+https://goo.gl/maps/P2ZnCyysTdSqDJpP9;-25.321157,-57.2897567
+    [Remaining: 42 - Success: 210 - Failed: 30]
+https://goo.gl/maps/p6BuFsrJzhQHApqn7;-25.320752,-57.2876247
+    [Remaining: 41 - Success: 211 - Failed: 30]
+https://goo.gl/maps/jpnEfeHXKgEzi8Lg7;-25.3207989,-57.2881308
+    [Remaining: 40 - Success: 212 - Failed: 30]
+https://goo.gl/maps/qdE9A5FAgw85aE4f7;-25.321706,-57.2891617
+    [Remaining: 39 - Success: 213 - Failed: 30]
+https://goo.gl/maps/Vi3bKD52tbhJeYfo7;-25.321341,-57.2896257
+    [Remaining: 38 - Success: 214 - Failed: 30]
+https://goo.gl/maps/VaFwQxxUjoaQB6Nr5;-25.3068168,-57.2710074
+    [Remaining: 37 - Success: 215 - Failed: 30]
+https://goo.gl/maps/JoL3NPEq3oa6GZfo9;-25.324334,-57.2747399
+    [Remaining: 36 - Success: 216 - Failed: 30]
+https://goo.gl/maps/E6LKAZ8Zdv25fRXTA;-25.329066,-57.6163817
+    [Remaining: 35 - Success: 217 - Failed: 30]
+https://goo.gl/maps/UDNRPny5d3KiFuXc8;-25.2969818,-57.5517645
+    [Remaining: 34 - Success: 218 - Failed: 30]
+https://goo.gl/maps/MhhiFat3SEAYCK8C9;-25.270419,-57.5624549
+    [Remaining: 33 - Success: 219 - Failed: 30]
+https://goo.gl/maps/nLehTx9g3YBce5DG8;-25.2726498,-57.5504065
+    [Remaining: 32 - Success: 220 - Failed: 30]
+https://goo.gl/maps/Qqh5N4mWCu2kmVU89;-25.2915729,-57.6180514
+    [Remaining: 31 - Success: 221 - Failed: 30]
+https://goo.gl/maps/hpoEXh9D5HEReJAd9;-25.2875433,-57.5743577
+    [Remaining: 30 - Success: 222 - Failed: 30]
+https://goo.gl/maps/nU4stsNG4EYSL4XW8;-25.2875063,-57.5632357
+    [Remaining: 29 - Success: 223 - Failed: 30]
+https://goo.gl/maps/KeoQ5iT3tcgFLBUYA;-25.2897577,-57.551207
+    [Remaining: 28 - Success: 224 - Failed: 30]
+https://goo.gl/maps/DibFiYLR4jKUPcR48;-25.2980945,-57.596823
+    [Remaining: 27 - Success: 225 - Failed: 30]
+https://goo.gl/maps/8cddi1Z9aXZRqEc76;-25.0135349,-57.5667976
+    [Remaining: 26 - Success: 226 - Failed: 30]
+https://goo.gl/maps/KvVCVvVfaqr3zVJ9A;-25.3056564,-57.5826407
+    [Remaining: 25 - Success: 227 - Failed: 30]
+https://goo.gl/maps/kPYPFfr7aLMPg3ge7;-25.2888851,-57.5609389
+    [Remaining: 24 - Success: 228 - Failed: 30]
+https://goo.gl/maps/4x4Sy6DACWp6KX3EA;-25.2852196,-57.5847051
+    [Remaining: 23 - Success: 229 - Failed: 30]
+https://www.google.com/maps?q=-25.329898834228516,-57.59004211425781&z=17&hl=en;-25.329898834228516,-57.59004211425781
+    [Remaining: 22 - Success: 230 - Failed: 30]
+https://goo.gl/maps/pHMQAMCGpkUJWcqo6;-25.2848491,-57.6181677
+    [Remaining: 21 - Success: 231 - Failed: 30]
+https://goo.gl/maps/5a5n4P2VgGkzMocM8;-25.2878513,-57.5730124
+    [Remaining: 20 - Success: 232 - Failed: 30]
+Failed: https://maps.app.goo.gl/P41ARkb9GrikB94P8
+    [Remaining: 19 - Success: 232 - Failed: 31]
+https://goo.gl/maps/9U9wC6tCZ4T17rTM6;-25.2856407,-57.642684
+    [Remaining: 18 - Success: 233 - Failed: 31]
+https://maps.app.goo.gl/uFC9oFhaG7zCi6Vo7;-25.280227,-57.581512
+    [Remaining: 17 - Success: 234 - Failed: 31]
+https://goo.gl/maps/MmEjA8ENoC9ewBPr6;-25.2953733,-57.5797414
+    [Remaining: 16 - Success: 235 - Failed: 31]
+https://goo.gl/maps/VknW99FFU97SXWFa9;-25.2771697,-57.6014343
+    [Remaining: 15 - Success: 236 - Failed: 31]
+https://goo.gl/maps/qKUR56HnkNXMi6C16;-25.294828,-57.6087417
+    [Remaining: 14 - Success: 237 - Failed: 31]
+https://goo.gl/maps/7muK2HvJoQ6Efe5WA;-25.2885719,-57.6216697
+    [Remaining: 13 - Success: 238 - Failed: 31]
+https://goo.gl/maps/6q3xybxwuL6chQMG8;-25.2831674,-57.5654878
+    [Remaining: 12 - Success: 239 - Failed: 31]
+https://goo.gl/maps/BPn5ESosMnLXnmJC9;-25.2877311,-57.6139223
+    [Remaining: 11 - Success: 240 - Failed: 31]
+https://maps.app.goo.gl/pa57oxePvrVj9Jdj9;-25.285474,-57.628923
+    [Remaining: 10 - Success: 241 - Failed: 31]
+Failed: https://maps.app.goo.gl/dowZPU3kBmxEWMfm8
+    [Remaining: 9 - Success: 241 - Failed: 32]
+https://goo.gl/maps/zhGfwfmuMbQfH1Jb7;-25.2802177,-57.6377599
+    [Remaining: 8 - Success: 242 - Failed: 32]
+https://www.google.com/maps/place/Luminotecnia+Fernando+de+la+Mora/@-25.332977,-57.5405107,17z/data=!3m1!4b1!4m5!3m4!1s0x945daec431e83d17:0x1c4dc45252732eb5!8m2!3d-25.332977!4d-57.538322?hl=es-PY;-25.332977,-57.5405107
+    [Remaining: 7 - Success: 243 - Failed: 32]
+https://goo.gl/maps/FC7UGHbPDzGKg7HP7;-25.2225266,-57.5442114
+    [Remaining: 6 - Success: 244 - Failed: 32]
+Failed: https://maps.app.goo.gl/xRiWL
+    [Remaining: 5 - Success: 244 - Failed: 33]
+https://goo.gl/maps/Mo5LAeFC8S9uHcNb6;-25.29538,-57.6184207
+    [Remaining: 4 - Success: 245 - Failed: 33]
+https://goo.gl/maps/QTyWynSdzW65hy1d7;-25.3520276,-57.5001391
+    [Remaining: 3 - Success: 246 - Failed: 33]
+https://goo.gl/maps/o22SHaZ1sDUTtbrk7;-25.361929,-57.6438722
+    [Remaining: 2 - Success: 247 - Failed: 33]
+https://goo.gl/maps/Df4gF4GAgVt7WaNm8;-25.2533289,-57.5539227
+    [Remaining: 1 - Success: 248 - Failed: 33]
+https://goo.gl/maps/Lm66xzUwHDBaYhFG6;-25.3035034,-57.5062578
+    [Remaining: 0 - Success: 249 - Failed: 33]
+Success: 249
+Failed: 33
