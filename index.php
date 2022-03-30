@@ -31,8 +31,10 @@ $remaining = count($sheetData);
 echo("\nremaining: $remaining\n");;
 
 foreach($sheetData as $row => $column){
-  if($row > 511){
-    echo "row: $row\n";
+  $status = trim($column['AG']);
+  
+  if($row > 1 /*&& $status === 'failed'*/){
+    echo "row: $row \n";
     $property = new PropertyModel();
     $tipoInmueble = new PropertyTypeModel();
     
@@ -93,6 +95,7 @@ foreach($sheetData as $row => $column){
       $operacion = ($isVenta && $isAlquiler)?'Venta/Alquiler':($isVenta? 'Venta':'Alquiler');
       $descripcion = $data['tipoInmueble'].' en '.$operacion.' - '.$zona;
     }else{
+      $data['descripcion'] = iconv("ISO-8859-1","UTF-8",$data['descripcion']);
       $descripcion = $data['descripcion'];
     } 
     
@@ -161,20 +164,17 @@ foreach($sheetData as $row => $column){
     $property->estados = array($estado);
     
     $inmueble->inmueble = $property;
-    saveProperty($inmueble, $imagesPath, $data['fotos']);
-    // jsonPretty($inmueble);
-    // var_dump($inmueble);
+    // saveProperty($inmueble, $imagesPath, $data['fotos']);
+    jsonPretty($inmueble);
   }
   $remaining--;
   echo("\n\nremaining: $remaining\n");
 }
 
-// var_dump($property);
 
 function saveProperty($data, $imagesPath, $linkDrive){
   global $row;
   $url = 'https://sai.propiver.com/SAI/seam/resource/rest/inmuebles/save';
-  // $url = 'https://jsonplaceholder.typicode.com/posts/1';
   $curl = new Curl();
   $curl->url($url);
   $curl->method('put');
@@ -213,9 +213,10 @@ function displayEcho(){
 }
 
 function jsonPretty($data){
-  $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_PRESERVE_ZERO_FRACTION | JSON_UNESCAPED_UNICODE);
-  // echo "<pre>$json</pre>";
-  echo "$json";
+  $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_PRESERVE_ZERO_FRACTION);
+  // echo 'Json: '.json_last_error_msg();
+  echo "<pre>$json</pre>";
+  // echo "$json";
 }
 
 function parseMoney($str){

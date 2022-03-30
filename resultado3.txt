@@ -1,0 +1,28 @@
+
+C:\xampp\htdocs\cargar>php index.php
+
+remaining: 881
+row: 610
+{"id":2591} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."}
+
+remaining: 271
+row: 666
+{"id":2593}
+
+remaining: 215
+row: 688
+{"id":2595} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."}
+
+remaining: 193
+row: 699
+{"id":2597}
+
+remaining: 182
+row: 704
+{"id":2599} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."}
+
+remaining: 177
+row: 783
+{"id":2601} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."} {"status":"archivos creados."}
+
+remaining: 98
