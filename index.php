@@ -33,7 +33,7 @@ echo("\nremaining: $remaining\n");;
 foreach($sheetData as $row => $column){
   $status = trim($column['AG']);
   
-  if($row > 1 /*&& $status === 'failed'*/){
+  if($row == 668 /*&& $status === 'failed'*/){
     echo "row: $row \n";
     $property = new PropertyModel();
     $tipoInmueble = new PropertyTypeModel();
@@ -213,8 +213,8 @@ function displayEcho(){
 }
 
 function jsonPretty($data){
-  $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_PRESERVE_ZERO_FRACTION);
-  // echo 'Json: '.json_last_error_msg();
+  $json = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_PRESERVE_ZERO_FRACTION | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE);
+  echo 'Json: '.json_last_error_msg();
   echo "<pre>$json</pre>";
   // echo "$json";
 }
